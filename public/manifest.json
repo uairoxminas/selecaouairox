@@ -1,0 +1,26 @@
+{
+  "name": "Seleção UAIROX",
+  "short_name": "UAIROX",
+  "description": "Desafio de constância. 39 dias. Uma vaga na elite.",
+  "start_url": "/dashboard",
+  "display": "standalone",
+  "background_color": "#FAFAF8",
+  "theme_color": "#C9A84C",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["fitness", "sports", "lifestyle"],
+  "lang": "pt-BR"
+}
