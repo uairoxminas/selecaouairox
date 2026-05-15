@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 export default function LoginPage() {
   const router = useRouter();
@@ -11,11 +12,17 @@ export default function LoginPage() {
   const [error, setError] = useState("");
 
   function handleCpf(v: string) {
-    const digits = v.replace(/\D/g, "").slice(0, 11);
-    setCpf(digits);
+    setCpf(v.replace(/\D/g, "").slice(0, 11));
   }
 
-  async function handleSubmit(e: React.FormEvent) {
+  function formatCpfDisplay(v: string) {
+    if (v.length <= 3) return v;
+    if (v.length <= 6) return `${v.slice(0, 3)}.${v.slice(3)}`;
+    if (v.length <= 9) return `${v.slice(0, 3)}.${v.slice(3, 6)}.${v.slice(6)}`;
+    return `${v.slice(0, 3)}.${v.slice(3, 6)}.${v.slice(6, 9)}-${v.slice(9, 11)}`;
+  }
+
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setError("");
     setLoading(true);
@@ -23,7 +30,7 @@ export default function LoginPage() {
       const res = await fetch("/api/auth", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email: email.trim().toLowerCase(), cpf: cpf.replace(/\D/g, "") }),
+        body: JSON.stringify({ email: email.trim().toLowerCase(), cpf }),
       });
       const data = await res.json();
       if (!res.ok) {
@@ -41,6 +48,7 @@ export default function LoginPage() {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center px-4 bg-[#FAFAF8]">
       <div className="w-full max-w-sm">
+
         {/* Logo */}
         <div className="text-center mb-10">
           <div className="inline-flex flex-col items-center border border-[#E8E6E1] rounded-xl px-8 py-4 mb-6">
@@ -63,6 +71,7 @@ export default function LoginPage() {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="seu@email.com"
+              autoComplete="email"
               required
               className="input-field"
             />
@@ -75,11 +84,10 @@ export default function LoginPage() {
             <input
               type="text"
               inputMode="numeric"
-              value={cpf}
+              value={formatCpfDisplay(cpf)}
               onChange={(e) => handleCpf(e.target.value)}
-              placeholder="Apenas números"
+              placeholder="000.000.000-00"
               required
-              maxLength={11}
               className="input-field"
             />
           </div>
@@ -99,9 +107,17 @@ export default function LoginPage() {
           </button>
         </form>
 
-        <p className="text-center text-xs text-[#8A8A8A] mt-8 leading-relaxed">
-          Dificuldades? Entre em contato com o suporte UAIROX.
-        </p>
+        <div className="mt-7 text-center space-y-2">
+          <p className="text-sm text-[#8A8A8A]">
+            Ainda não está inscrito?{" "}
+            <Link href="/inscricao" className="text-[#C9A84C] font-semibold">
+              Inscreva-se agora
+            </Link>
+          </p>
+          <p className="text-xs text-[#8A8A8A]">
+            Dificuldades? Entre em contato com o suporte UAIROX.
+          </p>
+        </div>
       </div>
     </div>
   );
