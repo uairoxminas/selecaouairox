@@ -21,6 +21,14 @@
 
 **O que o avatar não faz:** não é simulação de caimento. Serve para proporção e imagem de campanha. Onde a peça vai repuxar continua sendo respondido pela simulação 3D a partir do molde, ou pela peça-piloto vestida.
 
+**Pendência — refinar o rosto.** A v1 acerta corpo e proporção, mas o rosto ainda precisa de ajuste. A correção é retreinar com o mesmo conjunto mais 4 a 6 fotos de rosto em primeiro plano: luz frontal uniforme, expressão neutra, cabelo afastado do rosto, sem filtro e sem óculos, variando o ângulo entre frontal, perfil e três-quartos. O retreino gera um `soul_id` novo — o antigo continua válido até a troca.
+
+---
+
+## Regras de trabalho
+
+- **Uma imagem frontal por pedido.** Não gerar variações, costas ou ângulos extras sem pedido explícito.
+
 ---
 
 ## Marca
