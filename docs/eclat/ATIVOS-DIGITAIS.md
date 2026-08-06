@@ -29,6 +29,19 @@
 
 - **Uma imagem frontal por pedido.** Não gerar variações, costas ou ângulos extras sem pedido explícito.
 
+- **Nunca alterar a peça sem pedido.** Cor, acabamento e comprimento mudam quando pedido; construção, não.
+
+- **Os dois caminhos de geração se excluem — e a escolha muda a peça.**
+
+  | Caminho | Preserva a peça | Aceita o avatar |
+  |---|---|---|
+  | A partir da imagem de referência | **Sim** | Não |
+  | A partir de texto | Não | **Sim** |
+
+  A modelagem de costas do Macacão Cáustica — gola com fecho na nuca, painéis largos, alça atravessando a abertura na diagonal — **não se reconstrói a partir de texto.** Já derivou duas vezes quando gerada assim.
+
+  Regra: **peça definida se gera a partir da referência.** O avatar serve para julgar proporção e comprimento de peça nova, não para catálogo de peça já aprovada. Trocar de caminho é decisão do usuário, e precisa ser avisada antes, não depois.
+
 ---
 
 ## Marca
