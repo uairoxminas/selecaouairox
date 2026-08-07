@@ -1,0 +1,1002 @@
+<title>ÉCLAT · Conceito 001 Cáustica</title>
+<style>
+  :root {
+    --ground: #14110E;
+    --surface: #1C1814;
+    --surface-2: #241F1A;
+    --ink: #EDE7DB;
+    --ink-soft: #B8AE9E;
+    --ink-faint: #7C7365;
+    --copper: #C97A3F;
+    --copper-deep: #C0632C;
+    --amber: #E5A05C;
+    --rule: #332C25;
+    --bone: #E8E1D3;
+    --penumbra: #2E2B27;
+
+    --display: "Didot", "Bodoni MT", "Hoefler Text", "Playfair Display", Georgia, serif;
+    --body: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    --mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+
+    --measure: 34rem;
+    --pad: clamp(1.25rem, 5vw, 3rem);
+  }
+
+  @media (prefers-color-scheme: light) {
+    :root {
+      --ground: #EFEAE2;
+      --surface: #E6E0D5;
+      --surface-2: #DED7CA;
+      --ink: #1A1611;
+      --ink-soft: #4A4238;
+      --ink-faint: #857B6C;
+      --copper: #A9541F;
+      --copper-deep: #93481A;
+      --amber: #B96B26;
+      --rule: #CDC4B4;
+    }
+  }
+  :root[data-theme="light"] {
+    --ground: #EFEAE2;
+    --surface: #E6E0D5;
+    --surface-2: #DED7CA;
+    --ink: #1A1611;
+    --ink-soft: #4A4238;
+    --ink-faint: #857B6C;
+    --copper: #A9541F;
+    --copper-deep: #93481A;
+    --amber: #B96B26;
+    --rule: #CDC4B4;
+  }
+  :root[data-theme="dark"] {
+    --ground: #14110E;
+    --surface: #1C1814;
+    --surface-2: #241F1A;
+    --ink: #EDE7DB;
+    --ink-soft: #B8AE9E;
+    --ink-faint: #7C7365;
+    --copper: #C97A3F;
+    --copper-deep: #C0632C;
+    --amber: #E5A05C;
+    --rule: #332C25;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--ground);
+    color: var(--ink);
+    font-family: var(--body);
+    font-size: 1.0625rem;
+    line-height: 1.68;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap {
+    max-width: 62rem;
+    margin: 0 auto;
+    padding: 0 var(--pad) 6rem;
+  }
+
+  /* ---- the spine: Le Trait, running the length of the document ---- */
+  .doc {
+    display: grid;
+    grid-template-columns: 2.5rem minmax(0, 1fr);
+    gap: 0;
+  }
+  .rail {
+    position: relative;
+  }
+  .rail::before {
+    content: "";
+    position: absolute;
+    top: 0; bottom: 0; left: 0.55rem;
+    width: 1px;
+    background: linear-gradient(
+      to bottom,
+      transparent 0,
+      var(--copper) 3rem,
+      var(--copper) calc(100% - 8rem),
+      transparent 100%
+    );
+  }
+  @media (max-width: 40rem) {
+    .doc { grid-template-columns: 1rem minmax(0, 1fr); }
+    .rail::before { left: 0.2rem; }
+  }
+
+  /* ---- sections hang off the spine ---- */
+  section {
+    position: relative;
+    padding: 3.5rem 0 0.5rem;
+  }
+  section::before {
+    content: "";
+    position: absolute;
+    left: calc(-2.5rem + 0.3rem);
+    top: 4.15rem;
+    width: 0.52rem; height: 0.52rem;
+    border-radius: 50%;
+    background: var(--ground);
+    border: 1px solid var(--copper);
+  }
+  @media (max-width: 40rem) {
+    section::before { left: calc(-1rem + -0.04rem); }
+  }
+  section[data-node="refract"]::before { display: none; }
+
+  .refract-node {
+    position: absolute;
+    left: -3.1rem;
+    top: 3.1rem;
+    width: 2.4rem; height: 2.4rem;
+    overflow: visible;
+  }
+  @media (max-width: 40rem) { .refract-node { display: none; } }
+
+  /* ---- type ---- */
+  h1, h2, h3 { text-wrap: balance; margin: 0; }
+
+  .eyebrow {
+    font-family: var(--mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin: 0 0 0.85rem;
+  }
+  .eyebrow .num { color: var(--copper); }
+
+  h2 {
+    font-family: var(--display);
+    font-weight: 400;
+    font-size: clamp(1.7rem, 3.4vw, 2.5rem);
+    line-height: 1.12;
+    letter-spacing: -0.01em;
+    margin-bottom: 1.4rem;
+  }
+  h3 {
+    font-family: var(--body);
+    font-weight: 700;
+    font-size: 0.95rem;
+    letter-spacing: 0.01em;
+    margin: 2.2rem 0 0.6rem;
+  }
+  p { margin: 0 0 1.1rem; max-width: var(--measure); }
+  p.wide { max-width: 46rem; }
+  strong { font-weight: 700; }
+  em { font-style: italic; color: var(--ink-soft); }
+
+  a { color: var(--copper); }
+
+  /* ---- hero ---- */
+  .hero {
+    padding: clamp(4rem, 13vh, 8rem) 0 1rem;
+    position: relative;
+  }
+  .hero .mark {
+    font-family: var(--display);
+    font-size: clamp(3.4rem, 12vw, 7.5rem);
+    line-height: 0.9;
+    letter-spacing: 0.06em;
+    font-weight: 400;
+    margin: 0 0 1.6rem;
+  }
+  .hero .mark span { color: var(--copper); }
+  .hero .thesis {
+    font-family: var(--display);
+    font-size: clamp(1.35rem, 3.2vw, 2rem);
+    line-height: 1.3;
+    max-width: 26ch;
+    margin: 0 0 2rem;
+    color: var(--ink);
+  }
+  .hero .meta {
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem 1.6rem;
+    border-top: 1px solid var(--rule);
+    padding-top: 1rem;
+  }
+  .hero-line { display: block; margin: 2.5rem 0 0; width: 100%; height: 2px; }
+
+  /* ---- pull quote ---- */
+  blockquote {
+    margin: 2rem 0;
+    padding: 0 0 0 1.4rem;
+    border-left: 2px solid var(--copper);
+    font-family: var(--display);
+    font-size: clamp(1.25rem, 2.6vw, 1.65rem);
+    line-height: 1.35;
+    max-width: 30ch;
+  }
+
+  /* ---- tables ---- */
+  .tablewrap { overflow-x: auto; margin: 1.4rem 0 1.8rem; }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    min-width: 30rem;
+    font-size: 0.92rem;
+  }
+  th, td {
+    text-align: left;
+    padding: 0.7rem 1rem 0.7rem 0;
+    border-bottom: 1px solid var(--rule);
+    vertical-align: top;
+  }
+  th {
+    font-family: var(--mono);
+    font-weight: 400;
+    font-size: 0.66rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    border-bottom-color: var(--copper);
+  }
+  td:first-child { color: var(--ink); font-weight: 700; }
+  .num-col { font-variant-numeric: tabular-nums; font-family: var(--mono); color: var(--copper); }
+
+  /* ---- code cards ---- */
+  .codes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    gap: 1px;
+    background: var(--rule);
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    margin: 1.8rem 0 2rem;
+  }
+  .code {
+    background: var(--ground);
+    padding: 1.4rem 1.3rem 1.5rem;
+  }
+  .code .idx {
+    font-family: var(--mono);
+    font-size: 0.66rem;
+    letter-spacing: 0.16em;
+    color: var(--copper);
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  .code h4 {
+    font-family: var(--display);
+    font-weight: 400;
+    font-size: 1.35rem;
+    margin: 0 0 0.5rem;
+    line-height: 1.1;
+  }
+  .code p { font-size: 0.9rem; line-height: 1.55; margin: 0; color: var(--ink-soft); max-width: none; }
+  .code.required { background: var(--surface); }
+  .code .flag {
+    display: inline-block;
+    font-family: var(--mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ground);
+    background: var(--copper);
+    padding: 0.12rem 0.42rem;
+    margin-left: 0.4rem;
+    vertical-align: 0.15em;
+  }
+
+  /* ---- palette ---- */
+  .palette {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(7rem, 1fr));
+    gap: 0.9rem;
+    margin: 1.5rem 0 2rem;
+  }
+  .swatch .chip {
+    height: 4.5rem;
+    border: 1px solid var(--rule);
+    margin-bottom: 0.5rem;
+  }
+  .swatch .nm { font-size: 0.82rem; font-weight: 700; display: block; }
+  .swatch .hx {
+    font-family: var(--mono);
+    font-size: 0.66rem;
+    letter-spacing: 0.08em;
+    color: var(--ink-faint);
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* ---- do / don't ---- */
+  .rules {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+    gap: 2rem;
+    margin: 1.5rem 0 1rem;
+  }
+  .rules h3 { margin-top: 0; }
+  .rules ul { list-style: none; padding: 0; margin: 0; }
+  .rules li {
+    padding: 0.5rem 0 0.5rem 1.5rem;
+    border-bottom: 1px solid var(--rule);
+    font-size: 0.93rem;
+    position: relative;
+    line-height: 1.5;
+  }
+  .rules li::before {
+    position: absolute;
+    left: 0; top: 0.5rem;
+    font-family: var(--mono);
+    font-size: 0.8rem;
+  }
+  .do li::before { content: "+"; color: var(--copper); }
+  .dont li::before { content: "×"; color: var(--ink-faint); }
+
+  /* ---- pieces ---- */
+  .piece {
+    border-top: 1px solid var(--rule);
+    padding: 1.6rem 0;
+    display: grid;
+    grid-template-columns: 5.5rem minmax(0, 1fr);
+    gap: 1.6rem;
+    align-items: start;
+  }
+  .piece:last-of-type { border-bottom: 1px solid var(--rule); }
+  @media (max-width: 34rem) {
+    .piece { grid-template-columns: 1fr; gap: 0.9rem; }
+    .piece figure { max-width: 5.5rem; }
+  }
+  .piece figure { margin: 0; }
+  .piece .no {
+    font-family: var(--mono);
+    font-size: 0.66rem;
+    letter-spacing: 0.16em;
+    color: var(--copper);
+    display: block;
+    margin-bottom: 0.35rem;
+  }
+  .piece h4 {
+    font-family: var(--display);
+    font-weight: 400;
+    font-size: 1.5rem;
+    margin: 0 0 0.1rem;
+    line-height: 1.1;
+  }
+  .piece .sub {
+    font-size: 0.82rem;
+    color: var(--ink-faint);
+    font-style: italic;
+    margin: 0 0 0.7rem;
+    max-width: none;
+  }
+  .piece ul { margin: 0 0 0.8rem; padding-left: 1.1rem; }
+  .piece li { font-size: 0.92rem; line-height: 1.55; margin-bottom: 0.3rem; color: var(--ink-soft); }
+  .piece li strong { color: var(--ink); }
+  .why {
+    font-size: 0.86rem;
+    color: var(--ink);
+    background: var(--surface);
+    border-left: 2px solid var(--copper);
+    padding: 0.6rem 0.9rem;
+    margin: 0;
+    max-width: none;
+    line-height: 1.5;
+  }
+  .why b {
+    font-family: var(--mono);
+    font-size: 0.62rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--copper);
+    display: block;
+    margin-bottom: 0.15rem;
+  }
+
+  /* ---- decision list ---- */
+  ol.decisions { counter-reset: d; list-style: none; padding: 0; margin: 1.4rem 0 0; }
+  ol.decisions li {
+    counter-increment: d;
+    position: relative;
+    padding: 1rem 0 1rem 2.6rem;
+    border-bottom: 1px solid var(--rule);
+    max-width: 42rem;
+  }
+  ol.decisions li::before {
+    content: counter(d, decimal-leading-zero);
+    position: absolute;
+    left: 0; top: 1.1rem;
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    color: var(--copper);
+  }
+  ol.decisions .q { font-weight: 700; display: block; margin-bottom: 0.15rem; }
+  ol.decisions .n { font-size: 0.9rem; color: var(--ink-soft); }
+
+  .verdict {
+    border: 1px solid var(--copper);
+    padding: 1.3rem 1.4rem;
+    margin: 2rem 0;
+    max-width: 42rem;
+  }
+  .verdict p:last-child { margin-bottom: 0; }
+  .verdict .eyebrow { margin-bottom: 0.6rem; }
+
+  hr.rule { border: 0; border-top: 1px solid var(--rule); margin: 3rem 0 0; }
+
+  footer {
+    padding: 3rem 0 0;
+    font-family: var(--mono);
+    font-size: 0.66rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+  }
+
+  :focus-visible { outline: 2px solid var(--copper); outline-offset: 3px; }
+  @media (prefers-reduced-motion: no-preference) {
+    .draw { stroke-dasharray: 1200; stroke-dashoffset: 1200; animation: draw 2.2s cubic-bezier(.2,.7,.3,1) forwards; }
+    @keyframes draw { to { stroke-dashoffset: 0; } }
+  }
+</style>
+
+<div class="wrap">
+
+  <header class="hero">
+    <p class="eyebrow">Direção criativa · Coleção <span class="num">001</span></p>
+    <h1 class="mark">ÉCLAT<span>.</span></h1>
+    <p class="thesis">A luz não cai sobre a peça. A luz é construída dentro dela — e o instrumento é a costura.</p>
+    <div class="meta">
+      <span>Cáustica</span>
+      <span>Osso · Penumbra · Cobre</span>
+      <span>8 peças</span>
+      <span>use.ÉCLAT</span>
+    </div>
+    <svg class="hero-line" viewBox="0 0 1000 2" preserveAspectRatio="none" aria-hidden="true">
+      <path class="draw" d="M0 1 H1000" stroke="var(--copper)" stroke-width="2" fill="none"/>
+    </svg>
+  </header>
+
+  <div class="doc">
+    <div class="rail" aria-hidden="true"></div>
+    <main>
+
+      <section>
+        <p class="eyebrow"><span class="num">01</span> — Diagnóstico</p>
+        <h2>O trabalho da estilista está correto. Correto não é o mesmo que autoral.</h2>
+        <p class="wide">As três famílias entregues — Athleisure, Blackout Verde&nbsp;Exército&nbsp;e&nbsp;Licor, e Canelado Grafite — são bem executadas e vendáveis. O problema não é qualidade. É que cada peça delas já existe no catálogo de pelo menos cinco marcas de Brusque neste momento.</p>
+
+        <div class="tablewrap">
+          <table>
+            <thead>
+              <tr><th>Elemento entregue</th><th>Onde já está no mercado</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Nadador com abertura em gota</td><td>InMoov, Bechose, Alto Giro, Live!</td></tr>
+              <tr><td>Colorblock militar + laranja</td><td>Ciclo de cor que o mercado inteiro rodou em 2023–24</td></tr>
+              <tr><td>Recorte traseiro em V no short</td><td>Padrão absoluto de categoria</td></tr>
+              <tr><td>Macaquinho canelado alça assimétrica</td><td>Bechose, Oceane, private labels em geral</td></tr>
+              <tr><td>Camiseta oversized com frase em inglês</td><td>Território fundador da PWRD by Coffee</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p class="wide">O ponto crítico é a estampa com frase. A PWRD nasceu literalmente disso — camiseta com frase de café. Se a Éclat entra por ali, o cliente lê a marca como <em>a versão alternativa da PWRD</em>. Isso é a definição exata de ficar à sombra.</p>
+
+        <blockquote>O teste real: dá para reconhecer a peça a dez metros, de costas, sem logo? Hoje, não.</blockquote>
+
+        <h3>O que sobrevive e vira patrimônio</h3>
+        <p class="wide">A <strong>nomenclatura</strong>. Aurora, Solaris, Prisma, Vértice, Lumina, Radiance, Orvalho — todos nomes de fenômeno de luz, coerentes com <em>éclat</em> (do francês: lampejo, fulgor). A estilista acertou a poesia da marca sem acertar a engenharia. E a <strong>paleta terracota sobre osso</strong>, que apareceu tanto na família Athleisure quanto nas peças que modelamos juntos. Dois acertos independentes no mesmo ponto não são coincidência — é a marca aparecendo.</p>
+      </section>
+
+      <section>
+        <p class="eyebrow"><span class="num">02</span> — Território</p>
+        <h2>As três marcas que você revende já ocupam frase, performance e cor.</h2>
+        <div class="tablewrap">
+          <table>
+            <thead>
+              <tr><th>Marca</th><th>Território</th><th>O que ela não pode ser</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>PWRD by Coffee</td>
+                <td>Lifestyle declarado. Café + CrossFit. Comunidade e frase. Vende cultura antes de roupa.</td>
+                <td>Silenciosa. Sem slogan.</td>
+              </tr>
+              <tr>
+                <td>InMoov</td>
+                <td>Modelagem e performance. Peça que sustenta e resiste ao treino.</td>
+                <td>Conceitual. Não-esportiva.</td>
+              </tr>
+              <tr>
+                <td>Bechose</td>
+                <td>"Viva sua escolha." Cor, variedade, coleções florais, amplitude.</td>
+                <td>Restrita. Monocromática. Editada.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="wide">Sobram três territórios livres, e a Éclat cabe na interseção dos três: <strong>alfaiataria, luz e silêncio</strong>. Não "uma legging melhor" — outra categoria de objeto: roupa de treino construída com lógica de alfaiataria, não de malharia.</p>
+        <p class="wide">Isso resolve seu problema comercial na raiz. Revenda compete em preço e disponibilidade — jogos que a marca dona sempre ganha, e foi assim que você perdeu clientes para o site oficial. Produto sem equivalente no mercado compete em desejo. Aí não existe site oficial para onde a cliente fugir: você <em>é</em> o site oficial.</p>
+      </section>
+
+      <section data-node="refract">
+        <svg class="refract-node" viewBox="0 0 40 40" aria-hidden="true">
+          <path d="M4 20 H20" stroke="var(--copper)" stroke-width="1" fill="none"/>
+          <path d="M20 20 L38 8" stroke="var(--copper)" stroke-width="1" fill="none" opacity="0.9"/>
+          <path d="M20 20 L38 21" stroke="var(--copper)" stroke-width="1" fill="none" opacity="0.65"/>
+          <path d="M20 20 L34 33" stroke="var(--copper)" stroke-width="1" fill="none" opacity="0.4"/>
+        </svg>
+        <p class="eyebrow"><span class="num">03</span> — O sistema</p>
+        <h2>Sete códigos. Uma peça só é Éclat se carrega três — e o primeiro é obrigatório em todas.</h2>
+
+        <div class="codes">
+          <div class="code required">
+            <span class="idx">CÓDIGO 1</span>
+            <h4>Le Trait<span class="flag">obrigatório</span></h4>
+            <p>Uma única linha contínua de contraste atravessa a peça inteira, sem interrupção. Vivo embutido de 2&nbsp;mm ou pesponto duplo contrastante. Nunca simétrica: entra por um lado, sai por outro. Uma por peça — duas matam o código. E quando as peças da família são usadas juntas, as linhas se conectam.</p>
+          </div>
+          <div class="code">
+            <span class="idx">CÓDIGO 2</span>
+            <h4>Refração</h4>
+            <p>Em um ponto, a linha atinge um vértice e se divide em três raios divergentes, em ângulos e comprimentos desiguais. Pontos canônicos: esterno, crista ilíaca, panturrilha externa.</p>
+          </div>
+          <div class="code">
+            <span class="idx">CÓDIGO 3</span>
+            <h4>Costura invertida</h4>
+            <p>Overlock e cobertura aparentes pelo lado de fora, em cor contrastante. A peça carrega a lógica de avesso montado por fora. Se a costura aparece, é intencional — nunca por descuido.</p>
+          </div>
+          <div class="code">
+            <span class="idx">CÓDIGO 4</span>
+            <h4>Monograma cego</h4>
+            <p>O monograma nunca é impresso nem bordado em contraste. Existe só em relevo 3D de silicone tom sobre tom, debossado na etiqueta de cós, ou em jacquard no elástico interno. Você não vê a marca — você vê a luz nela.</p>
+          </div>
+          <div class="code">
+            <span class="idx">CÓDIGO 5</span>
+            <h4>Corte anatômico contínuo</h4>
+            <p>Recortes seguem o corpo, não o painel de produção. A costura princesa desce do quadril, contorna o glúteo e continua até a barra em linha única, sem quebra no joelho.</p>
+          </div>
+          <div class="code">
+            <span class="idx">CÓDIGO 6</span>
+            <h4>Degradê Aurora</h4>
+            <p>Um painel por família recebe degradê no fio ou dip-dye, do cós à barra. Uso restrito: uma peça por coleção, no máximo duas.</p>
+          </div>
+          <div class="code">
+            <span class="idx">CÓDIGO 7</span>
+            <h4>Ponto de luz</h4>
+            <p>Um único detalhe iridescente em lugar inesperado — barra interna, aba de bolso, ponta de cadarço. Não é elemento de segurança. É assinatura, e só aparece em movimento.</p>
+          </div>
+        </div>
+
+        <h3>O detalhe que ninguém tem</h3>
+        <p class="wide">Você me pediu a peça em que a cliente olha e pensa <em>"nunca vi assim, esse detalhe nunca vi"</em>. É o <strong>vivo embutido contrastante de 2&nbsp;mm em malha de compressão</strong>. Técnica de alfaiataria e de estofaria automotiva; ninguém faz em fitness — não porque é caro, mas porque exige facção que saiba pilotar. Você tem essa facção perto de você. É a sua vantagem estrutural.</p>
+      </section>
+
+      <section>
+        <p class="eyebrow"><span class="num">04</span> — A linha desenhada</p>
+        <h2>Como o traço percorre o corpo.</h2>
+        <p class="wide">Os dois desenhos abaixo são o mesmo raio de luz, continuado de uma peça para a outra. É por isso que a cliente compra o conjunto e não a peça.</p>
+
+        <svg viewBox="0 0 640 320" style="width:100%;height:auto;max-width:44rem;margin:1.5rem 0 1rem;" role="img" aria-label="Esquema técnico: o traço contínuo atravessando a segunda pele e a calça flare, e o leque de refração no esterno.">
+          <g stroke="var(--ink-faint)" fill="none" stroke-width="1.1" opacity="0.75">
+            <!-- top: cropped long sleeve, front -->
+            <path d="M118 40 Q140 30 160 40 L196 56 L212 108 L190 116 L182 96 L182 150 Q160 158 138 158 Q116 158 96 150 L96 96 L88 116 L66 108 L82 56 Z"/>
+            <path d="M118 40 Q139 52 160 40"/>
+            <!-- pant: flare, front -->
+            <path d="M400 40 L508 40 L508 70 L502 150 Q498 210 494 250 L490 296 L458 296 L452 250 L454 160 L440 160 L442 250 L436 296 L404 296 L400 250 Q396 210 392 150 L386 70 Z"/>
+            <path d="M400 70 H508" />
+            <path d="M446 82 V152"/>
+          </g>
+
+          <!-- Le Trait on the top: shoulder to left hem -->
+          <path class="draw" d="M186 52 Q168 84 148 104 Q128 122 106 148" stroke="var(--copper)" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+          <!-- refraction fan at sternum -->
+          <g stroke="var(--copper)" fill="none" stroke-width="1.4" stroke-linecap="round">
+            <path d="M148 104 L128 74" opacity="0.9"/>
+            <path d="M148 104 L146 70" opacity="0.6"/>
+            <path d="M148 104 L168 78" opacity="0.38"/>
+          </g>
+          <circle cx="148" cy="104" r="2.6" fill="var(--copper)"/>
+
+          <!-- the jump: dotted continuation between pieces -->
+          <path d="M106 148 C 200 176 300 176 386 74" stroke="var(--copper)" stroke-width="1" fill="none" stroke-dasharray="2 6" opacity="0.55"/>
+
+          <!-- Le Trait on the pant: outer waist, around glute, unbroken to hem -->
+          <path class="draw" d="M386 74 Q392 120 410 156 Q432 208 442 250 Q448 276 452 294" stroke="var(--copper)" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+
+          <g font-family="ui-monospace, monospace" font-size="9" letter-spacing="1.6" fill="var(--ink-faint)">
+            <text x="66" y="182">SEGUNDA PELE CÁUSTICA</text>
+            <text x="386" y="318">CALÇA HALO</text>
+            <text x="186" y="40">ENTRADA DO TRAÇO</text>
+            <text x="170" y="66" fill="var(--copper)">REFRAÇÃO</text>
+            <text x="214" y="196">AS LINHAS SE ENCONTRAM</text>
+          </g>
+        </svg>
+      </section>
+
+      <section>
+        <p class="eyebrow"><span class="num">05</span> — Paleta</p>
+        <h2>Luz sobre neutro. Nunca cor sobre cor.</h2>
+        <p class="wide">Bechose é cor. InMoov é preto técnico. PWRD é preto com cores de time. A Éclat é a única que pode ser neutra e luminosa — e a paleta é a primeira coisa que se lê de longe.</p>
+
+        <h3>Base — 85% da coleção</h3>
+        <div class="palette">
+          <div class="swatch"><div class="chip" style="background:#E8E1D3"></div><span class="nm">Osso</span><span class="hx">#E8E1D3</span></div>
+          <div class="swatch"><div class="chip" style="background:#D6CCB9"></div><span class="nm">Alabastro</span><span class="hx">#D6CCB9</span></div>
+          <div class="swatch"><div class="chip" style="background:#2E2B27"></div><span class="nm">Penumbra</span><span class="hx">#2E2B27</span></div>
+          <div class="swatch"><div class="chip" style="background:#14110E"></div><span class="nm">Nocturno</span><span class="hx">#14110E</span></div>
+        </div>
+
+        <h3>O traço — 10%</h3>
+        <div class="palette">
+          <div class="swatch"><div class="chip" style="background:#C0632C"></div><span class="nm">Cobre</span><span class="hx">#C0632C</span></div>
+          <div class="swatch"><div class="chip" style="background:#E08A3C"></div><span class="nm">Âmbar</span><span class="hx">#E08A3C</span></div>
+        </div>
+
+        <h3>Flash — máximo 5%, uma peça por coleção</h3>
+        <div class="palette">
+          <div class="swatch"><div class="chip" style="background:linear-gradient(120deg,#D8D3CB,#B7C3C8,#CFC4C0)"></div><span class="nm">Prata Líquida</span><span class="hx">iridescente</span></div>
+          <div class="swatch"><div class="chip" style="background:#3B6E8F"></div><span class="nm">Azul Éclat</span><span class="hx">#3B6E8F</span></div>
+        </div>
+
+        <p class="wide"><strong>Fora da paleta, por decisão:</strong> verde exército, rosa, roxo, neon, azul royal. Verde militar com laranja é o combo mais repetido do mercado nos últimos dois anos — é exatamente onde a Éclat não pode estar.</p>
+      </section>
+
+      <section>
+        <p class="eyebrow"><span class="num">06</span> — Silhueta</p>
+        <h2>O que sempre, e o que nunca.</h2>
+        <div class="rules">
+          <div>
+            <h3>Assinatura</h3>
+            <ul class="do">
+              <li>Boot / flare como silhueta de perna — quebra o padrão legging</li>
+              <li>Cós dobrado alto com monograma cego</li>
+              <li>Segunda pele manga longa com furo de polegar</li>
+              <li>Cropped alto com barra reta, sem elástico aparente</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Interditado</h3>
+            <ul class="dont">
+              <li>Frase em inglês estampada — território PWRD</li>
+              <li>Estampa gráfica de qualquer tipo na frente</li>
+              <li>Colorblock de dois painéis chapados</li>
+              <li>Abertura em gota nas costas com nadador padrão</li>
+              <li>Logo grande, escrito, em cor contrastante</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <p class="eyebrow"><span class="num">07</span> — Coleção 001</p>
+        <h2>Cáustica.</h2>
+        <p class="wide"><em>Cáustica</em> é o termo técnico para o desenho que a luz forma ao atravessar uma superfície curva — o rastro no fundo de um copo d'água, a rede de luz no fundo de uma piscina. É literalmente o desenho que a luz faz ao encontrar uma curva. É o conceito da marca em uma palavra que ninguém no mercado usa.</p>
+        <p class="wide">Oito peças. Osso e Penumbra, linha em Cobre. Critério de entrada de cada peça: <strong>ser impossível de achar em qualquer catálogo de Brusque</strong>.</p>
+
+        <div class="piece">
+          <figure>
+            <svg viewBox="0 0 90 130" style="width:100%;height:auto" role="img" aria-label="Croqui da Segunda Pele Cáustica">
+              <g stroke="var(--ink-faint)" fill="none" stroke-width="1.2" opacity="0.8">
+                <path d="M30 14 Q45 6 60 14 L82 26 L88 72 L72 76 L68 60 L68 108 Q49 116 45 116 Q41 116 22 108 L22 60 L18 76 L2 72 L8 26 Z"/>
+                <path d="M30 14 Q45 22 60 14"/>
+              </g>
+              <path d="M72 24 Q58 52 45 66 Q32 84 20 104" stroke="var(--copper)" stroke-width="2" fill="none" stroke-linecap="round"/>
+              <g stroke="var(--copper)" fill="none" stroke-width="1.2" stroke-linecap="round">
+                <path d="M45 66 L30 40" opacity="0.9"/><path d="M45 66 L44 36" opacity="0.6"/><path d="M45 66 L62 44" opacity="0.38"/>
+              </g>
+            </svg>
+          </figure>
+          <div>
+            <span class="no">PEÇA 01</span>
+            <h4>Segunda Pele Cáustica</h4>
+            <p class="sub">Manga longa cropped, canelado fino, furo de polegar</p>
+            <ul>
+              <li><strong>Le Trait:</strong> entra na costura do ombro direito, cruza o busto em diagonal, contorna a costela esquerda e morre na barra lateral esquerda. Vivo em Cobre, 2&nbsp;mm.</li>
+              <li><strong>Refração:</strong> no esterno a linha abre em três raios divergentes subindo às clavículas.</li>
+              <li>Overlock aparente em Cobre em todas as raglans. Barra reta sem elástico. Punho longo com furo de polegar. Monograma cego em relevo, 8&nbsp;mm, altura do coração.</li>
+            </ul>
+            <p class="why"><b>Por que ninguém tem</b>O leque de três raios no esterno é uma operação de costura que ninguém pilota em malha. É o desenho que vira a foto da marca.</p>
+          </div>
+        </div>
+
+        <div class="piece">
+          <figure>
+            <svg viewBox="0 0 90 130" style="width:100%;height:auto" role="img" aria-label="Croqui da Calça Halo">
+              <g stroke="var(--ink-faint)" fill="none" stroke-width="1.2" opacity="0.8">
+                <path d="M18 8 L72 8 L72 24 L69 62 Q67 94 65 116 L63 126 L47 126 L44 100 L45 66 L38 66 L39 100 L36 126 L20 126 L18 100 Q16 68 14 40 L11 24 Z"/>
+                <path d="M18 24 H72"/><path d="M41 30 V64"/>
+              </g>
+              <path d="M11 24 Q14 50 24 70 Q36 96 39 116 Q41 122 42 126" stroke="var(--copper)" stroke-width="2" fill="none" stroke-linecap="round"/>
+            </svg>
+          </figure>
+          <div>
+            <span class="no">PEÇA 02 · HERÓI</span>
+            <h4>Calça Halo</h4>
+            <p class="sub">Flare cintura alta, cós dobrado, malha de compressão</p>
+            <ul>
+              <li><strong>Le Trait:</strong> nasce na lateral externa do cós, desce contornando o glúteo em costura princesa e continua sem quebra até a barra pela lateral interna. Uma linha só, do cós ao chão.</li>
+              <li>Cós dobrado de 12&nbsp;cm com monograma cego centralizado atrás. Barra flare a partir do joelho, caimento reto no chão. Sem costura central traseira visível.</li>
+            </ul>
+            <p class="why"><b>Por que ninguém tem</b>Uma linha única contínua de 1,10&nbsp;m exige encaixe de molde em peça inteira. As facções montam em três partes porque sai mais barato.</p>
+          </div>
+        </div>
+
+        <div class="piece">
+          <figure>
+            <svg viewBox="0 0 90 130" style="width:100%;height:auto" role="img" aria-label="Croqui da Legging Refração">
+              <g stroke="var(--ink-faint)" fill="none" stroke-width="1.2" opacity="0.8">
+                <path d="M18 8 L72 8 L70 26 Q66 70 62 104 L59 122 L46 122 L44 94 L45 62 L38 62 L39 94 L36 122 L23 122 L20 104 Q16 70 13 26 Z"/>
+                <path d="M15 22 Q45 30 70 22"/>
+              </g>
+              <path d="M70 14 Q56 44 40 62 Q30 84 26 108" stroke="var(--copper)" stroke-width="2" fill="none" stroke-linecap="round"/>
+              <g stroke="var(--copper)" fill="none" stroke-width="1.1" stroke-linecap="round">
+                <path d="M27 100 L14 108" opacity="0.85"/><path d="M27 100 L15 96" opacity="0.55"/>
+              </g>
+            </svg>
+          </figure>
+          <div>
+            <span class="no">PEÇA 03</span>
+            <h4>Legging Refração</h4>
+            <p class="sub">Cintura alta, compressão alta, comprimento 7/8</p>
+            <ul>
+              <li><strong>Le Trait</strong> assimétrico: entra na lateral direita do cós, cruza a coxa em diagonal e sai no tornozelo esquerdo.</li>
+              <li><strong>Refração</strong> na panturrilha esquerda, em três raios curtos e desiguais.</li>
+              <li>Cós anatômico em V invertido, sem costura horizontal. Bolso interno com Ponto de Luz iridescente.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="piece">
+          <figure>
+            <svg viewBox="0 0 90 130" style="width:100%;height:auto" role="img" aria-label="Croqui do Top Zênite">
+              <g stroke="var(--ink-faint)" fill="none" stroke-width="1.2" opacity="0.8">
+                <path d="M20 34 L28 20 L40 24 L50 24 L62 20 L70 34 L72 64 Q45 74 18 64 Z"/>
+                <path d="M40 24 L40 40 L50 40 L50 24"/>
+              </g>
+              <path d="M28 20 L40 40 L50 40 L62 20" stroke="var(--copper)" stroke-width="2" fill="none" stroke-linejoin="round"/>
+              <path d="M62 20 L70 34 L72 60" stroke="var(--copper)" stroke-width="2" fill="none"/>
+              <g stroke="var(--copper)" fill="none" stroke-width="1.1" stroke-linecap="round">
+                <path d="M45 58 L30 66" opacity="0.85"/><path d="M45 58 L45 70" opacity="0.55"/><path d="M45 58 L60 66" opacity="0.38"/>
+              </g>
+            </svg>
+          </figure>
+          <div>
+            <span class="no">PEÇA 04</span>
+            <h4>Top Zênite</h4>
+            <p class="sub">Sustentação média, decote quadrado, alça larga</p>
+            <ul>
+              <li><strong>Le Trait</strong> contornando o decote e descendo por uma única alça.</li>
+              <li><strong>Refração</strong> sob o busto: três raios curtos abrindo para as laterais.</li>
+              <li>Costas inteiriças — sem gota, sem nadador. Elástico jacquard com monograma.</li>
+            </ul>
+            <p class="why"><b>Por que ninguém tem</b>Costas fechadas e limpas em top de treino é contraintuitivo para o mercado. É exatamente por isso que se reconhece de longe.</p>
+          </div>
+        </div>
+
+        <div class="piece">
+          <figure>
+            <svg viewBox="0 0 90 130" style="width:100%;height:auto" role="img" aria-label="Croqui do Macaquinho Eclipse">
+              <g stroke="var(--ink-faint)" fill="none" stroke-width="1.2" opacity="0.8">
+                <path d="M30 12 Q45 5 60 12 L80 24 L86 66 L72 70 L68 56 L68 78 L70 108 L68 118 L47 118 L45 96 L43 118 L22 118 L20 108 L22 78 L22 56 L18 70 L4 66 L10 24 Z"/>
+                <path d="M22 78 H68"/>
+              </g>
+              <path d="M70 22 Q52 44 42 62 Q34 84 36 104 Q37 112 38 118" stroke="var(--copper)" stroke-width="2" fill="none" stroke-linecap="round"/>
+            </svg>
+          </figure>
+          <div>
+            <span class="no">PEÇA 05</span>
+            <h4>Macaquinho Eclipse</h4>
+            <p class="sub">Manga longa, perna curta, canelado</p>
+            <ul>
+              <li><strong>Le Trait</strong> em espiral: sai do ombro, envolve o tronco e morre na perna oposta. É a peça que demonstra o sistema inteiro em um objeto só.</li>
+              <li>Recorte nas costas em ângulo de refração — V agudo assimétrico, não gota. Zíper invisível na lateral.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="piece">
+          <figure>
+            <svg viewBox="0 0 90 130" style="width:100%;height:auto" role="img" aria-label="Croqui do Shorts Nadir">
+              <g stroke="var(--ink-faint)" fill="none" stroke-width="1.2" opacity="0.8">
+                <path d="M16 24 L74 24 L72 46 Q70 66 68 82 L66 96 L48 96 L45 74 L42 96 L24 96 L22 82 Q19 60 17 46 Z"/>
+                <path d="M17 44 Q45 52 73 44"/>
+              </g>
+              <path d="M74 28 Q64 52 52 66 Q42 80 40 96" stroke="var(--copper)" stroke-width="2" fill="none" stroke-linecap="round"/>
+            </svg>
+          </figure>
+          <div>
+            <span class="no">PEÇA 06</span>
+            <h4>Shorts Nadir</h4>
+            <p class="sub">Ciclista, cintura alta, 15&nbsp;cm</p>
+            <ul>
+              <li><strong>Le Trait</strong> único contornando o quadril. Sem recorte horizontal traseiro — costura princesa contínua.</li>
+              <li>Versão de entrada da família. É o preço de porta da coleção.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="piece">
+          <figure>
+            <svg viewBox="0 0 90 130" style="width:100%;height:auto" role="img" aria-label="Croqui da Calça Alvorada com degradê">
+              <defs>
+                <linearGradient id="dip" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#E8E1D3" stop-opacity="0.9"/>
+                  <stop offset="55%" stop-color="#D08A4E" stop-opacity="0.55"/>
+                  <stop offset="100%" stop-color="#C0632C" stop-opacity="0.85"/>
+                </linearGradient>
+              </defs>
+              <path d="M18 8 L72 8 L72 24 L69 62 Q67 94 65 116 L63 126 L47 126 L44 100 L45 66 L38 66 L39 100 L36 126 L20 126 L18 100 Q16 68 14 40 L11 24 Z" fill="url(#dip)" stroke="var(--ink-faint)" stroke-width="1.2" opacity="0.9"/>
+              <path d="M11 24 Q14 50 24 70 Q36 96 39 116 Q41 122 42 126" stroke="var(--penumbra)" stroke-width="2" fill="none" stroke-linecap="round"/>
+            </svg>
+          </figure>
+          <div>
+            <span class="no">PEÇA 07 · CAMPANHA</span>
+            <h4>Calça Alvorada</h4>
+            <p class="sub">Flare, malha de compressão, dip-dye</p>
+            <ul>
+              <li>Degradê do Osso no cós ao Cobre na barra.</li>
+              <li><strong>Le Trait</strong> em Penumbra — o contraste se inverte: linha escura sobre claro.</li>
+              <li>Uma peça, um degradê, edição limitada. É a peça da campanha.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="piece">
+          <figure>
+            <svg viewBox="0 0 90 130" style="width:100%;height:auto" role="img" aria-label="Croqui do corta-vento Miragem">
+              <g stroke="var(--ink-faint)" fill="none" stroke-width="1.2" opacity="0.8">
+                <path d="M28 22 Q45 10 62 22 L84 34 L88 76 L74 80 L70 64 L70 96 Q45 104 20 96 L20 64 L16 80 L2 76 L6 34 Z"/>
+                <path d="M45 24 V96"/>
+                <path d="M28 22 Q45 32 62 22"/>
+              </g>
+              <path d="M84 36 Q76 44 72 60 Q68 76 74 78" stroke="var(--copper)" stroke-width="2" fill="none" stroke-linecap="round"/>
+              <path d="M84 36 Q66 26 45 24" stroke="var(--copper)" stroke-width="2" fill="none" stroke-linecap="round"/>
+            </svg>
+          </figure>
+          <div>
+            <span class="no">PEÇA 08 · VITRINE</span>
+            <h4>Corta-vento Miragem</h4>
+            <p class="sub">Unissex, cropped, tecido leve iridescente</p>
+            <ul>
+              <li>Acabamento iridescente sutil em Prata Líquida.</li>
+              <li><strong>Le Trait</strong> em Cobre percorrendo a manga inteira, do punho ao capuz.</li>
+              <li>Costura termocolada nos painéis — sem furo de agulha, leitura futurista. Monograma cego de 15&nbsp;cm nas costas, tom sobre tom.</li>
+            </ul>
+            <p class="why"><b>Por que ninguém tem</b>Solda ultrassônica em moda fitness nacional é raro. Se sua facção não fizer, existe serviço terceirizado — vale o custo, é a peça de vitrine.</p>
+          </div>
+        </div>
+
+        <h3>Como a família se conecta</h3>
+        <div class="tablewrap">
+          <table>
+            <thead><tr><th>Conjunto</th><th>O encontro das linhas</th></tr></thead>
+            <tbody>
+              <tr><td>Segunda Pele + Halo</td><td>a linha morre na barra lateral esquerda do top exatamente onde nasce a linha do cós da calça</td></tr>
+              <tr><td>Zênite + Refração</td><td>a alça-linha do top aponta para o vértice do cós em V</td></tr>
+              <tr><td>Eclipse</td><td>sozinho, contém o percurso completo</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="wide">Isso é a razão de comprar o conjunto e a razão de voltar para completar a família. Também é impossível de copiar sem copiar o sistema inteiro.</p>
+      </section>
+
+      <section>
+        <p class="eyebrow"><span class="num">08</span> — Engenharia</p>
+        <h2>O que a facção perto de você precisa entregar.</h2>
+        <div class="tablewrap">
+          <table>
+            <thead><tr><th>Técnica</th><th>Dificuldade</th><th>O que exige</th></tr></thead>
+            <tbody>
+              <tr><td>Overlock contrastante aparente</td><td class="num-col">baixa</td><td>Linha colorida e regulagem. Custo próximo de zero.</td></tr>
+              <tr><td>Relevo 3D em silicone</td><td class="num-col">baixa</td><td>Já citado pela estilista. Fornecedor de aviamento resolve.</td></tr>
+              <tr><td>Vivo embutido 2&nbsp;mm em malha</td><td class="num-col">média · chave</td><td>Calcador de vivo e piloto de tensão. Malha estica, vivo não. <strong>Pilotar isto primeiro.</strong></td></tr>
+              <tr><td>Recorte anatômico contínuo</td><td class="num-col">média-alta</td><td>Modelagem em peça única. Consome mais tecido.</td></tr>
+              <tr><td>Elástico jacquard com monograma</td><td class="num-col">média</td><td>Mínimo de fábrica, normalmente 500 a 1000&nbsp;m.</td></tr>
+              <tr><td>Dip-dye / degradê no fio</td><td class="num-col">alta</td><td>Tinturaria específica. Terceirizar.</td></tr>
+              <tr><td>Termocolagem / solda</td><td class="num-col">alta</td><td>Equipamento dedicado. Terceirizar ou adiar para a 002.</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>As cinco perguntas para levar à facção antes de qualquer coisa</h3>
+        <ol>
+          <li>Consegue aplicar vivo embutido de 2&nbsp;mm em malha de compressão sem enrugar a costura no estiramento?</li>
+          <li>Consegue montar costura princesa contínua do cós à barra sem emenda no joelho?</li>
+          <li>Qual o mínimo por cor de linha em overlock três fios?</li>
+          <li>Trabalha com aplique de silicone em relevo tom sobre tom?</li>
+          <li>Qual o mínimo por modelo e o custo da peça-piloto?</li>
+        </ol>
+
+        <div class="verdict">
+          <p class="eyebrow">Piloto mínimo</p>
+          <p>Pilote <strong>três peças, não oito</strong>: Segunda Pele Cáustica, Calça Halo e Top Zênite. Se o vivo embutido funcionar nessas três, o sistema inteiro está validado e as outras cinco são derivação. Se não funcionar, o Código 1 migra para pesponto duplo contrastante — plano B legítimo, e continua sendo Éclat.</p>
+        </div>
+      </section>
+
+      <section>
+        <p class="eyebrow"><span class="num">09</span> — A coleção pronta</p>
+        <h2>Não jogue nada fora. Crie duas linhas.</h2>
+        <div class="rules">
+          <div>
+            <h3>Éclat Ateliê</h3>
+            <p style="font-size:0.93rem">A coleção autoral. Cáustica é a 001. Produção perto de você, lote curto, margem alta, edição numerada, duas por ano. É a linha que define o que a marca é.</p>
+          </div>
+          <div>
+            <h3>Éclat Essenciais</h3>
+            <p style="font-size:0.93rem">Onde a coleção da estilista entra. Básicos permanentes, produção Brusque, margem de giro. Você mesmo disse: toda marca precisa de básico. O papel dele é sustentar caixa e servir de porta de entrada — não definir a marca.</p>
+          </div>
+        </div>
+
+        <h3>Três ajustes baratos para os Essenciais herdarem a marca</h3>
+        <ul class="do" style="list-style:none;padding:0;margin:0 0 1.6rem;max-width:42rem">
+          <li style="padding:0.5rem 0 0.5rem 1.5rem;border-bottom:1px solid var(--rule);position:relative;font-size:0.93rem">Trocar a linha de overlock por Cobre em todas as peças — puxa Blackout e Canelado para dentro do sistema sem refazer molde.</li>
+          <li style="padding:0.5rem 0 0.5rem 1.5rem;border-bottom:1px solid var(--rule);position:relative;font-size:0.93rem">Remover as estampas com frase em inglês e substituir por relevo tom sobre tom. <strong>É a única mudança inegociável</strong> — é ela que te tira da sombra da PWRD.</li>
+          <li style="padding:0.5rem 0 0.5rem 1.5rem;border-bottom:1px solid var(--rule);position:relative;font-size:0.93rem">Aplicar Monograma Cego em relevo no lugar do monograma impresso.</li>
+        </ul>
+
+        <h3>O que segurar</h3>
+        <p class="wide">Segure a <strong>família Athleisure inteira</strong>. É a menos distintiva, é a que colide de frente com a PWRD, é a de maior risco de sobra e é a mais fácil de refazer depois com os códigos aplicados — o corta-vento vira Miragem, a camisa vira peça de alfaiataria com Le Trait. Blackout e Canelado podem entrar agora como Essenciais: malha de compressão e canelado tonal já conversam com a marca.</p>
+
+        <div class="tablewrap">
+          <table>
+            <thead><tr><th>Fase</th><th>O quê</th></tr></thead>
+            <tbody>
+              <tr><td>Agora</td><td>Essenciais (Blackout + Canelado) com os três ajustes. Gera caixa e presença.</td></tr>
+              <tr><td>Em paralelo</td><td>Pilotagem das três peças-chave de Cáustica na facção local.</td></tr>
+              <tr><td>Lançamento</td><td>Cáustica como coleção de estreia. A campanha inteira em cima dela.</td></tr>
+              <tr><td>Depois</td><td>Athleisure retrabalhada entra como cápsula Ateliê da 002.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="wide">O lançamento oficial da marca é a Cáustica — não os Essenciais. Os Essenciais entram silenciosamente como catálogo. A narrativa é a Cáustica.</p>
+      </section>
+
+      <section>
+        <p class="eyebrow"><span class="num">10</span> — A marca além da roupa</p>
+        <h2>Fala pouco. Nunca explica.</h2>
+        <blockquote>A costura é o desenho.<br>Você não vê a marca — você vê a luz.</blockquote>
+        <p class="wide">Frases curtas, em português, sem exclamação, sem imperativo motivacional. O que a marca <strong>não</strong> diz: "vem com a gente", "bora treinar", "sua melhor versão", qualquer frase em inglês, qualquer coisa com "empoderamento".</p>
+
+        <h3>Fotografia — a assinatura visual</h3>
+        <p class="wide">Já está definida nas imagens que fizemos. Vira regra fixa: fundo em gradiente de areia sem cenário e sem academia; <strong>uma fonte de luz lateral dura</strong>, com a sombra projetada visível no chão como elemento de composição; uma modelo por foto, corpo inteiro, coque baixo, pés descalços, sem tênis e sem acessório; pose parada e contida, nunca movimento de treino; e um frontal mais <strong>um de costas por peça, obrigatório</strong> — é de costas que o Le Trait aparece inteiro.</p>
+        <p class="wide">É o oposto do mercado, que fotografa em box, com luz chapada, movimento e grupo. Um feed inteiro nesse padrão é o que produz reconhecimento a dez metros.</p>
+
+        <h3>Etiqueta e embalagem</h3>
+        <p class="wide">Etiqueta de cós debossada, sem tinta, em couro sintético Osso ou Penumbra. Etiqueta interna com o nome da peça e o número da coleção: <span style="font-family:var(--mono);font-size:0.82rem;letter-spacing:0.1em">CÁUSTICA · 001 · HALO</span>. Embalagem em kraft Osso com lacre de monograma em relevo, sem plástico. E dentro da caixa, um cartão com <strong>o diagrama do percurso do Le Trait daquela peça</strong> — a cliente entende que comprou um sistema, não uma roupa.</p>
+      </section>
+
+      <section>
+        <p class="eyebrow"><span class="num">11</span> — Validação</p>
+        <h2>Três testes antes de produzir.</h2>
+        <div class="tablewrap">
+          <table>
+            <thead><tr><th>Teste</th><th>Como fazer</th><th>Reprova se</th></tr></thead>
+            <tbody>
+              <tr><td>Dez metros</td><td>Imprima a foto de costas, sem logo, e mostre a alguém do mercado</td><td>a pessoa não souber dizer a marca</td></tr>
+              <tr><td>Catálogo</td><td>Peça-piloto lado a lado com Bechose, InMoov e PWRD</td><td>ela se parecer com qualquer uma</td></tr>
+              <tr><td>Detalhe</td><td>Mostre de perto a uma cliente e conte o tempo até a pergunta</td><td>ela levar mais de dez segundos para perguntar "como é que faz isso?"</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section>
+        <p class="eyebrow"><span class="num">12</span> — Próximo passo</p>
+        <h2>Cinco decisões suas, e eu sigo para as fichas técnicas.</h2>
+        <ol class="decisions">
+          <li><span class="q">Le Trait: vivo embutido ou pesponto contrastante?</span><span class="n">Vivo é muito mais forte visualmente e muito mais difícil. Preciso saber o que a facção topa antes de fechar as fichas.</span></li>
+          <li><span class="q">A 001 é só feminina, ou tem masculino?</span><span class="n">Cáustica como está desenhada é feminina. Se quiser masculino já na 001, eu desenho três peças espelhadas.</span></li>
+          <li><span class="q">Qual o teto de custo por peça?</span><span class="n">Muda se eu especifico vivo, degradê e termocolagem, ou se fico nos códigos 1 a 3.</span></li>
+          <li><span class="q">Segurar a Athleisure inteira ou só as camisetas com frase?</span><span class="n">Minha recomendação é a família inteira, mas depende de quanto já está comprometido em tecido.</span></li>
+          <li><span class="q">Confirma "Cáustica" como nome da 001?</span><span class="n">Alternativas na mesma lógica: Primeira Luz, Vitral, Umbra.</span></li>
+        </ol>
+      </section>
+
+      <hr class="rule">
+      <footer>ÉCLAT · Conceito 001 Cáustica · Documento de direção criativa</footer>
+
+    </main>
+  </div>
+</div>

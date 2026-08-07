@@ -1,0 +1,530 @@
+<title>ÉCLAT · Meridiano — lapidação da família Athleisure</title>
+<style>
+  :root {
+    --ground: #14110E; --surface: #1C1814; --ink: #EDE7DB; --ink-soft: #B8AE9E;
+    --ink-faint: #7C7365; --copper: #C97A3F; --copper-deep: #C0632C; --rule: #332C25;
+    --brass: #B8873F; --penumbra: #2E2B27;
+    --display: "Didot", "Bodoni MT", "Hoefler Text", "Playfair Display", Georgia, serif;
+    --body: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    --mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+    --measure: 34rem; --pad: clamp(1.25rem, 5vw, 3rem);
+  }
+  @media (prefers-color-scheme: light) {
+    :root { --ground:#EFEAE2; --surface:#E6E0D5; --ink:#1A1611; --ink-soft:#4A4238;
+      --ink-faint:#857B6C; --copper:#A9541F; --copper-deep:#93481A; --rule:#CDC4B4; --brass:#8A6524; }
+  }
+  :root[data-theme="light"] {
+    --ground:#EFEAE2; --surface:#E6E0D5; --ink:#1A1611; --ink-soft:#4A4238;
+    --ink-faint:#857B6C; --copper:#A9541F; --copper-deep:#93481A; --rule:#CDC4B4; --brass:#8A6524;
+  }
+  :root[data-theme="dark"] {
+    --ground:#14110E; --surface:#1C1814; --ink:#EDE7DB; --ink-soft:#B8AE9E;
+    --ink-faint:#7C7365; --copper:#C97A3F; --copper-deep:#C0632C; --rule:#332C25; --brass:#B8873F;
+  }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--ground); color:var(--ink); font-family:var(--body);
+    font-size:1.0625rem; line-height:1.68; -webkit-font-smoothing:antialiased; }
+  .wrap { max-width:62rem; margin:0 auto; padding:0 var(--pad) 6rem; }
+
+  .doc { display:grid; grid-template-columns:2.5rem minmax(0,1fr); }
+  .rail { position:relative; }
+  .rail::before { content:""; position:absolute; top:0; bottom:0; left:0.55rem; width:1px;
+    background:linear-gradient(to bottom, transparent 0, var(--copper) 3rem, var(--copper) calc(100% - 8rem), transparent 100%); }
+  @media (max-width:40rem){ .doc{grid-template-columns:1rem minmax(0,1fr);} .rail::before{left:0.2rem;} }
+
+  section { position:relative; padding:3.5rem 0 0.5rem; }
+  section::before { content:""; position:absolute; left:calc(-2.5rem + 0.3rem); top:4.15rem;
+    width:0.52rem; height:0.52rem; border-radius:50%; background:var(--ground); border:1px solid var(--copper); }
+  @media (max-width:40rem){ section::before{ left:-1.04rem; } }
+
+  h1,h2,h3 { text-wrap:balance; margin:0; }
+  .eyebrow { font-family:var(--mono); font-size:0.68rem; letter-spacing:0.2em; text-transform:uppercase;
+    color:var(--ink-faint); margin:0 0 0.85rem; }
+  .eyebrow .num { color:var(--copper); }
+  h2 { font-family:var(--display); font-weight:400; font-size:clamp(1.7rem,3.4vw,2.5rem);
+    line-height:1.12; letter-spacing:-0.01em; margin-bottom:1.4rem; }
+  h3 { font-weight:700; font-size:0.95rem; margin:2.2rem 0 0.6rem; }
+  p { margin:0 0 1.1rem; max-width:var(--measure); }
+  p.wide { max-width:46rem; }
+  em { font-style:italic; color:var(--ink-soft); }
+
+  .hero { padding:clamp(3.5rem,11vh,7rem) 0 1rem; }
+  .hero .mark { font-family:var(--display); font-size:clamp(2.8rem,10vw,6rem); line-height:0.92;
+    letter-spacing:0.04em; font-weight:400; margin:0 0 1.4rem; }
+  .hero .mark span { color:var(--copper); }
+  .hero .thesis { font-family:var(--display); font-size:clamp(1.25rem,3vw,1.85rem); line-height:1.32;
+    max-width:28ch; margin:0 0 2rem; }
+  .hero .meta { font-family:var(--mono); font-size:0.7rem; letter-spacing:0.16em; text-transform:uppercase;
+    color:var(--ink-faint); display:flex; flex-wrap:wrap; gap:0.6rem 1.6rem; border-top:1px solid var(--rule); padding-top:1rem; }
+
+  blockquote { margin:2rem 0; padding:0 0 0 1.4rem; border-left:2px solid var(--copper);
+    font-family:var(--display); font-size:clamp(1.2rem,2.5vw,1.55rem); line-height:1.35; max-width:32ch; }
+
+  .tablewrap { overflow-x:auto; margin:1.4rem 0 1.8rem; }
+  table { border-collapse:collapse; width:100%; min-width:30rem; font-size:0.92rem; }
+  th,td { text-align:left; padding:0.7rem 1rem 0.7rem 0; border-bottom:1px solid var(--rule); vertical-align:top; }
+  th { font-family:var(--mono); font-weight:400; font-size:0.66rem; letter-spacing:0.16em;
+    text-transform:uppercase; color:var(--ink-faint); border-bottom-color:var(--copper); }
+  td:first-child { color:var(--ink); font-weight:700; }
+  td.sai { color:var(--ink-faint); text-decoration:line-through; font-weight:400; }
+  td.entra { color:var(--copper); font-weight:700; }
+
+  .status { display:grid; grid-template-columns:repeat(auto-fit,minmax(13rem,1fr)); gap:1px;
+    background:var(--rule); border-top:1px solid var(--rule); border-bottom:1px solid var(--rule); margin:1.6rem 0 2rem; }
+  .status div { background:var(--ground); padding:1rem 1.1rem 1.2rem; }
+  .status .k { font-size:0.9rem; font-weight:700; display:block; margin-bottom:0.2rem; }
+  .status .v { font-size:0.82rem; color:var(--ink-soft); display:block; line-height:1.45; }
+  .status .s { font-family:var(--mono); font-size:0.6rem; letter-spacing:0.14em; text-transform:uppercase;
+    display:inline-block; margin-top:0.55rem; padding:0.1rem 0.4rem; }
+  .s.ok { background:var(--copper); color:var(--ground); }
+  .s.hold { border:1px solid var(--ink-faint); color:var(--ink-faint); }
+  .s.now { background:var(--ink); color:var(--ground); }
+
+  .regs { display:grid; grid-template-columns:repeat(auto-fit,minmax(14rem,1fr)); gap:1px;
+    background:var(--rule); border-top:1px solid var(--rule); border-bottom:1px solid var(--rule); margin:1.6rem 0 2rem; }
+  .reg { background:var(--ground); padding:1.4rem 1.3rem 1.5rem; }
+  .reg.active { background:var(--surface); }
+  .reg .idx { font-family:var(--mono); font-size:0.66rem; letter-spacing:0.16em; color:var(--copper); display:block; margin-bottom:0.5rem; }
+  .reg h4 { font-family:var(--display); font-weight:400; font-size:1.3rem; margin:0 0 0.5rem; line-height:1.1; }
+  .reg p { font-size:0.88rem; line-height:1.55; margin:0 0 0.6rem; color:var(--ink-soft); max-width:none; }
+  .reg .use { font-family:var(--mono); font-size:0.62rem; letter-spacing:0.13em; text-transform:uppercase; color:var(--copper); }
+  .reg .flag { display:inline-block; font-family:var(--mono); font-size:0.58rem; letter-spacing:0.13em;
+    text-transform:uppercase; color:var(--ground); background:var(--copper); padding:0.1rem 0.4rem; margin-left:0.35rem; vertical-align:0.18em; }
+
+  .fault { border-left:2px solid var(--copper); background:var(--surface); padding:1rem 1.2rem; margin:0 0 1rem; max-width:44rem; }
+  .fault h4 { font-size:0.92rem; margin:0 0 0.3rem; }
+  .fault p { margin:0; font-size:0.9rem; color:var(--ink-soft); max-width:none; }
+
+  .compare { display:grid; grid-template-columns:repeat(auto-fit,minmax(15rem,1fr)); gap:1.6rem; margin:1.6rem 0 1.4rem; }
+  .compare figure { margin:0; }
+  .compare figcaption { font-family:var(--mono); font-size:0.63rem; letter-spacing:0.15em;
+    text-transform:uppercase; color:var(--ink-faint); margin-top:0.6rem; }
+  .compare .depois figcaption { color:var(--copper); }
+
+  .path { border-top:1px solid var(--rule); padding:1.3rem 0; max-width:44rem; }
+  .path:last-of-type { border-bottom:1px solid var(--rule); }
+  .path .tag { font-family:var(--mono); font-size:0.63rem; letter-spacing:0.15em; text-transform:uppercase;
+    color:var(--copper); display:block; margin-bottom:0.25rem; }
+  .path h4 { font-family:var(--display); font-weight:400; font-size:1.35rem; margin:0 0 0.5rem; }
+  .path ul { margin:0; padding-left:1.1rem; }
+  .path li { font-size:0.91rem; line-height:1.55; margin-bottom:0.3rem; color:var(--ink-soft); }
+  .path li strong { color:var(--ink); }
+  .rec { display:inline-block; font-family:var(--mono); font-size:0.58rem; letter-spacing:0.13em;
+    text-transform:uppercase; background:var(--copper); color:var(--ground); padding:0.1rem 0.4rem; vertical-align:0.2em; margin-left:0.4rem; }
+
+  ol.fixes { counter-reset:f; list-style:none; padding:0; margin:1.2rem 0 0; }
+  ol.fixes li { counter-increment:f; position:relative; padding:0.95rem 0 0.95rem 2.6rem;
+    border-bottom:1px solid var(--rule); max-width:44rem; }
+  ol.fixes li::before { content:counter(f); position:absolute; left:0; top:1.05rem;
+    font-family:var(--mono); font-size:0.72rem; letter-spacing:0.1em; color:var(--copper); }
+  ol.fixes .q { font-weight:700; display:block; margin-bottom:0.15rem; }
+  ol.fixes .n { font-size:0.9rem; color:var(--ink-soft); }
+
+  .verdict { border:1px solid var(--copper); padding:1.3rem 1.4rem; margin:2rem 0; max-width:44rem; }
+  .verdict p:last-child { margin-bottom:0; }
+  .verdict .eyebrow { margin-bottom:0.6rem; }
+
+  hr.rule { border:0; border-top:1px solid var(--rule); margin:3rem 0 0; }
+  footer { padding:3rem 0 0; font-family:var(--mono); font-size:0.66rem; letter-spacing:0.16em;
+    text-transform:uppercase; color:var(--ink-faint); }
+  :focus-visible { outline:2px solid var(--copper); outline-offset:3px; }
+</style>
+
+<div class="wrap">
+
+  <header class="hero">
+    <p class="eyebrow">Família Athleisure · Lapidação</p>
+    <h1 class="mark">MERIDIANO<span>.</span></h1>
+    <p class="thesis">No Ateliê o reflexo é costurado. Aqui ele é de metal — e é a mesma marca falando.</p>
+    <div class="meta">
+      <span>Camisa · Short · Bermuda</span>
+      <span>Registro 2 · A Ferragem</span>
+      <span>Sem costura aparente</span>
+    </div>
+  </header>
+
+  <div class="doc">
+    <div class="rail" aria-hidden="true"></div>
+    <main>
+
+      <section>
+        <p class="eyebrow"><span class="num">01</span> — Decisões travadas</p>
+        <h2>Onde estamos depois da sua última rodada.</h2>
+        <div class="status">
+          <div><span class="k">Canelado Grafite</span><span class="v">Vai para produção</span><span class="s ok">fechado</span></div>
+          <div><span class="k">Verde Exército + Licor</span><span class="v">Vai para produção. Mercado pede verde militar há tempos</span><span class="s ok">fechado</span></div>
+          <div><span class="k">Canelado Telha</span><span class="v">Tecido vem para MG, desenhos novos produzidos aqui</span><span class="s ok">fechado</span></div>
+          <div><span class="k">Corta-vento</span><span class="v">Cortado. Setembro não é hora</span><span class="s hold">2027</span></div>
+          <div><span class="k">Camisa com frase</span><span class="v">Não produzida. Virou over gola V comprida</span><span class="s ok">fechado</span></div>
+          <div><span class="k">Família Athleisure</span><span class="v">Lapidar agora, com pegada esporte</span><span class="s now">este doc</span></div>
+        </div>
+
+        <h3>Duas notas sobre suas decisões</h3>
+        <p class="wide"><strong>O verde militar:</strong> você está certo e eu concordo — demanda real de cliente vale mais que regra de paleta. O ajuste é de posicionamento, não de cor: o verde entra como <em>Essenciais</em>, linha de giro, que é o que ele é. A paleta autoral continua neutro e cobre no Ateliê. As duas coisas convivem sem conflito.</p>
+        <p class="wide"><strong>O telha em MG</strong> é a jogada mais importante desta rodada, e talvez você não tenha percebido o tamanho dela. Telha <em>é</em> a cor Cobre da marca. Produzir telha perto de você, com desenho novo, é a primeira peça Ateliê nascendo — e o tecido já está resolvido.</p>
+      </section>
+
+      <section>
+        <p class="eyebrow"><span class="num">02</span> — O sistema abre</p>
+        <h2>Você disse que não quer tudo com viés e costura aparente. Está certo — então o sistema tem três registros, não um.</h2>
+        <p class="wide">Toda peça Éclat usa pelo menos um. Nenhuma peça precisa usar todos. <em>Éclat</em> é lampejo, reflexo: no Ateliê o reflexo é costurado, no Athleisure ele é de metal.</p>
+        <div class="regs">
+          <div class="reg">
+            <span class="idx">REGISTRO 1</span>
+            <h4>Le Trait</h4>
+            <p>A costura é o desenho. Vivo embutido, pesponto contrastante, recorte anatômico contínuo.</p>
+            <span class="use">malha · compressão · ateliê</span>
+          </div>
+          <div class="reg active">
+            <span class="idx">REGISTRO 2</span>
+            <h4>A Ferragem<span class="flag">esta família</span></h4>
+            <p>O metal é o único brilho. Cursor de zíper, ponteira de cordão, ilhós, elástico jacquard — sempre latão fosco envelhecido, tom cobre. Nenhuma costura aparente.</p>
+            <span class="use">tecido plano · athleisure</span>
+          </div>
+          <div class="reg">
+            <span class="idx">REGISTRO 3</span>
+            <h4>O Relevo</h4>
+            <p>Só luz e sombra na superfície. Monograma em silicone 3D tom sobre tom, gravação, textura. Sem cor, sem metal.</p>
+            <span class="use">básicos · camisetas</span>
+          </div>
+        </div>
+        <p class="wide">O Registro 2 é exatamente o que você pediu: zíper embutido e elástico da marca, sem nenhum viés.</p>
+      </section>
+
+      <section>
+        <p class="eyebrow"><span class="num">03</span> — Diagnóstico</p>
+        <h2>Três defeitos de construção respondem por quase toda a sensação de "falta algo".</h2>
+
+        <div class="fault">
+          <h4>A · O cós é franzido, não é construído</h4>
+          <p>Nas três peças o elástico foi franzido direto no tecido, sem cós estruturado. Sai irregular, ondula, e essa é a assinatura visual de peça de dormir. É o que mais derruba o valor percebido — e o mais barato de corrigir.</p>
+        </div>
+        <div class="fault">
+          <h4>B · O aviamento é genérico</h4>
+          <p>Cordão de moletom trançado branco puro contra tecido bege: cor errada e material errado. Sem ponteira. O furo por onde ele sai é caseado torto, não é ilhós. Nenhuma etiqueta de barra. <strong>Não há um único ponto de brilho na peça</strong> — e a marca se chama Éclat.</p>
+        </div>
+        <div class="fault">
+          <h4>C · A bermuda não tem construção interna</h4>
+          <p>Sem forro, sem nesga, sem bolso com fechamento, sem ventilação. Você está certo: é um pedaço de pano. O cliente não paga pelo tecido — paga pelo que sente ao vestir e pelo que vê quando abaixa a cabeça.</p>
+        </div>
+
+        <blockquote>Athleisure é descrição de categoria, não nome. A família de sol alto chama Meridiano.</blockquote>
+      </section>
+
+      <section>
+        <p class="eyebrow"><span class="num">04</span> — Peça 1</p>
+        <h2>Camisa Meridiano — tirar o social, botar esporte.</h2>
+        <p class="wide">Hoje quatro elementos dizem "social" e um só diz "esporte". Gola camisa com pé de gola, carcela de botões redondos, bolso chapado com <strong>aba pontiaguda</strong> — o mais social dos três, é código western — e punho de bainha simples. Contra tudo isso, só o caimento over.</p>
+
+        <div class="compare">
+          <figure>
+            <svg viewBox="0 0 200 240" style="width:100%;height:auto" role="img" aria-label="Camisa piloto atual: gola camisa, carcela de botões, bolso com aba pontiaguda">
+              <g stroke="var(--ink-faint)" fill="none" stroke-width="1.4">
+                <path d="M70 30 Q100 18 130 30 L172 50 L182 108 L158 116 L152 92 L152 208 Q100 220 48 208 L48 92 L42 116 L18 108 L28 50 Z"/>
+                <path d="M70 30 L88 52 L100 44 L112 52 L130 30"/>
+                <path d="M100 44 L100 208"/>
+                <path d="M62 76 L92 76 L92 104 L62 104 Z"/>
+                <path d="M62 76 L77 88 L92 76"/>
+              </g>
+              <g fill="var(--ink-faint)">
+                <circle cx="100" cy="86" r="3"/><circle cx="100" cy="118" r="3"/>
+                <circle cx="100" cy="150" r="3"/><circle cx="100" cy="182" r="3"/>
+              </g>
+              <g font-family="ui-monospace,monospace" font-size="8" letter-spacing="1.2" fill="var(--ink-faint)">
+                <text x="118" y="82">ABA PONTIAGUDA</text>
+                <text x="112" y="150">BOTÃO REDONDO</text>
+              </g>
+            </svg>
+            <figcaption>Antes · piloto</figcaption>
+          </figure>
+          <figure class="depois">
+            <svg viewBox="0 0 200 240" style="width:100%;height:auto" role="img" aria-label="Camisa redesenhada: gola funil, zíper embutido de duas vias, bolso com zíper na costura, punho e barra com ajuste">
+              <g stroke="var(--ink-faint)" fill="none" stroke-width="1.4">
+                <path d="M70 30 Q100 18 130 30 L172 50 L182 108 L158 116 L152 92 L152 202 Q100 214 48 202 L48 92 L42 116 L18 108 L28 50 Z"/>
+                <path d="M70 30 Q100 40 130 30 L130 16 Q100 6 70 16 Z"/>
+                <path d="M48 196 Q100 208 152 196"/>
+                <path d="M42 108 Q46 112 42 116"/>
+              </g>
+              <path d="M100 34 L100 206" stroke="var(--copper)" stroke-width="1.8" fill="none"/>
+              <path d="M64 96 L94 96" stroke="var(--copper)" stroke-width="1.8" fill="none"/>
+              <g fill="var(--brass)">
+                <rect x="96" y="70" width="8" height="13" rx="1.6"/>
+                <rect x="96" y="176" width="8" height="13" rx="1.6"/>
+                <rect x="90" y="92" width="7" height="9" rx="1.4"/>
+              </g>
+              <g stroke="var(--copper)" stroke-width="3" fill="none">
+                <path d="M48 190 Q100 202 152 190" opacity="0.85"/>
+              </g>
+              <g font-family="ui-monospace,monospace" font-size="8" letter-spacing="1.2" fill="var(--copper)">
+                <text x="112" y="26">GOLA FUNIL 6CM</text>
+                <text x="112" y="76">ZÍPER 2 VIAS</text>
+                <text x="10" y="92">BOLSO NA COSTURA</text>
+                <text x="112" y="188">CORDÃO NA BARRA</text>
+              </g>
+              <g font-family="ui-monospace,monospace" font-size="8" letter-spacing="1.2" fill="var(--ink-faint)">
+                <text x="4" y="120">PUNHO JACQUARD</text>
+              </g>
+            </svg>
+            <figcaption>Depois · Caminho A</figcaption>
+          </figure>
+        </div>
+
+        <div class="path">
+          <span class="tag">Caminho A</span>
+          <h4>Zíper embutido inteiro<span class="rec">recomendado</span></h4>
+          <ul>
+            <li>Carcela de botão sai. Entra <strong>zíper nº5 destacável de duas vias</strong>, do decote à barra, coberto por carcela interna — só o cursor aparece.</li>
+            <li>Gola vira <strong>funil de 6 cm</strong>, que fecha até o queixo ou abre em revers.</li>
+            <li>Cursor com <strong>puxador metálico de monograma vazado</strong> e cordinha de 4 cm com ponteira.</li>
+            <li>A peça inteira muda de categoria com uma operação só — mesmo molde de corpo, continua over.</li>
+            <li>Duas vias permite abrir por baixo e amarrar na cintura. É a foto que a cliente posta.</li>
+          </ul>
+        </div>
+        <div class="path">
+          <span class="tag">Caminho B</span>
+          <h4>Meio-zíper</h4>
+          <ul>
+            <li>Zíper embutido de 20 cm, do decote ao esterno. Gola funil. Veste pela cabeça.</li>
+            <li>Mais barato e mais rápido, silhueta mais limpa. Menos versátil que o A.</li>
+          </ul>
+        </div>
+        <div class="path">
+          <span class="tag">Caminho C</span>
+          <h4>Sem fechamento</h4>
+          <ul>
+            <li>Carcela falsa costurada, decote em V com cós de gola em malha canelada.</li>
+            <li>O mais barato — e vira quase uma camiseta de tecido plano. Perde presença.</li>
+          </ul>
+        </div>
+
+        <h3>Ajustes que valem nos três caminhos</h3>
+        <div class="tablewrap">
+          <table>
+            <thead><tr><th>Onde</th><th>Sai</th><th>Entra</th><th>Por quê</th></tr></thead>
+            <tbody>
+              <tr><td>Bolso</td><td class="sai">aba pontiaguda</td><td class="entra">zíper embutido na costura, só o cursor aparece</td><td>mata o código western e vira função real</td></tr>
+              <tr><td>Punho</td><td class="sai">bainha dobrada</td><td class="entra">elástico jacquard Éclat 25 mm</td><td>assinatura e código esporte</td></tr>
+              <tr><td>Barra</td><td class="sai">bainha reta</td><td class="entra">passador com cordão chato e ponteira</td><td>a cliente franze a barra como quiser</td></tr>
+              <tr><td>Costas</td><td class="sai">liso</td><td class="entra">prega macho central e fita de reforço na cava</td><td>código técnico, visível de costas</td></tr>
+              <tr><td>Lateral</td><td class="sai">nada</td><td class="entra">etiqueta tecida na barra</td><td>é o detalhe que você sentiu faltar</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="verdict">
+          <p class="eyebrow">Camiseta over gola V — onde vai a marca</p>
+          <p>Você perguntou. Regra: <strong>não empilhe emblema e escrita no mesmo lugar.</strong> O emblema vai no peito esquerdo, 8 mm, silicone em relevo tom sobre tom. A palavra ÉCLAT vai nas costas, centralizada, logo abaixo da costura da gola, 12 mm, também em relevo. Nada mais na frente — é o oposto exato da PWRD e é o que faz a peça envelhecer bem.</p>
+        </div>
+      </section>
+
+      <section>
+        <p class="eyebrow"><span class="num">05</span> — Peça 2</p>
+        <h2>Short Meridiano — o que está faltando.</h2>
+        <p class="wide">Você acertou na sensação. Faltam quatro coisas, e três delas são invisíveis na foto mas decisivas na mão. Mantenha o comprimento mais longo que você escolheu e a barra com fenda curva — os dois estão certos.</p>
+
+        <div class="compare">
+          <figure>
+            <svg viewBox="0 0 200 200" style="width:100%;height:auto" role="img" aria-label="Short piloto atual: cós franzido, cordão branco, ilhós caseado">
+              <g stroke="var(--ink-faint)" fill="none" stroke-width="1.4">
+                <path d="M30 34 L170 34 L164 96 Q158 140 152 166 L146 184 L108 184 L100 132 L92 184 L54 184 L48 166 Q40 130 36 96 Z"/>
+                <path d="M30 34 Q100 44 170 34"/>
+                <path d="M36 30 q8 10 16 0 q8 10 16 0 q8 10 16 0 q8 10 16 0 q8 10 16 0 q8 10 16 0 q8 10 16 0 q8 10 16 0" stroke-width="1"/>
+              </g>
+              <g stroke="#EDE7DB" stroke-width="3" fill="none" stroke-linecap="round">
+                <path d="M92 38 Q88 58 84 74"/><path d="M110 38 Q114 58 118 74"/>
+              </g>
+              <g font-family="ui-monospace,monospace" font-size="8" letter-spacing="1.2" fill="var(--ink-faint)">
+                <text x="20" y="20">CÓS FRANZIDO DIRETO</text>
+                <text x="122" y="80">CORDÃO BRANCO</text>
+                <text x="14" y="80">SEM PONTEIRA</text>
+              </g>
+            </svg>
+            <figcaption>Antes · piloto</figcaption>
+          </figure>
+          <figure class="depois">
+            <svg viewBox="0 0 200 200" style="width:100%;height:auto" role="img" aria-label="Short redesenhado: cós construído com jacquard, cordão cobre com ponteira metálica, bolso com zíper, short interno">
+              <g stroke="var(--ink-faint)" fill="none" stroke-width="1.4">
+                <path d="M30 34 L170 34 L164 96 Q158 140 152 166 L146 184 L108 184 L100 132 L92 184 L54 184 L48 166 Q40 130 36 96 Z"/>
+                <path d="M32 58 Q100 68 168 58"/>
+                <path d="M56 150 Q100 158 144 150" stroke-dasharray="3 4" opacity="0.6"/>
+              </g>
+              <rect x="30" y="34" width="140" height="24" fill="var(--penumbra)" opacity="0.55"/>
+              <g font-family="ui-monospace,monospace" font-size="7" letter-spacing="2.4" fill="var(--copper)">
+                <text x="42" y="50">ÉCLAT ✦ ÉCLAT ✦</text>
+              </g>
+              <g stroke="var(--copper)" stroke-width="3.4" fill="none" stroke-linecap="butt">
+                <path d="M92 58 Q88 76 86 92"/><path d="M110 58 Q114 76 116 92"/>
+              </g>
+              <g fill="var(--brass)">
+                <rect x="82" y="92" width="8" height="12" rx="1.4"/>
+                <rect x="112" y="92" width="8" height="12" rx="1.4"/>
+                <circle cx="92" cy="57" r="3"/><circle cx="110" cy="57" r="3"/>
+              </g>
+              <path d="M120 82 L152 86" stroke="var(--copper)" stroke-width="1.8" fill="none"/>
+              <rect x="148" y="82" width="7" height="9" rx="1.4" fill="var(--brass)"/>
+              <g font-family="ui-monospace,monospace" font-size="8" letter-spacing="1.2" fill="var(--copper)">
+                <text x="14" y="20">CÓS JACQUARD 4,5CM</text>
+                <text x="120" y="72">BOLSO C/ ZÍPER</text>
+                <text x="4" y="112">PONTEIRA METÁLICA</text>
+                <text x="34" y="176">SHORT INTERNO</text>
+              </g>
+            </svg>
+            <figcaption>Depois · Meridiano</figcaption>
+          </figure>
+        </div>
+
+        <ol class="fixes">
+          <li><span class="q">Cós construído — o item nº 1</span><span class="n">Sai o elástico franzido direto. Entra cós duplo de 4,5 cm com elástico jacquard Éclat interno e dois canais de pesponto para não rolar. Variante mais forte: jacquard exposto, tipo underwear, com o monograma aparecendo — mais ousado, reconhece de longe, custo igual.</span></li>
+          <li><span class="q">Short interno em malha — o "algo que falta"</span><span class="n">Liner leve em malha dry, preso só no cós, costura flatlock. É o que transforma a peça de short de dormir em short de treino, resolve transparência e justifica o preço. É literalmente a peça que está faltando.</span></li>
+          <li><span class="q">O cordão precisa morrer</span><span class="n">Sai o trançado branco puro. Entra cordão chato de 12 mm em Cobre ou tom sobre tom, ponteira metálica em latão fosco gravada com o monograma, e ilhós metálico de 5 mm — não caseado. Três aviamentos, e é o que faz a cliente pegar o cordão na mão e mudar de ideia sobre o preço.</span></li>
+          <li><span class="q">Bolso traseiro com zíper embutido</span><span class="n">Um só, do lado direito, com puxador de cordinha. Função real e código esporte. Somar etiqueta tecida na barra lateral.</span></li>
+        </ol>
+      </section>
+
+      <section>
+        <p class="eyebrow"><span class="num">06</span> — Peça 3</p>
+        <h2>Bermuda Meridiano — o problema dos R$&nbsp;200.</h2>
+        <p class="wide">O cliente masculino não paga por tecido. Ele paga por construção que sente ao vestir, e hoje a peça não tem nenhuma. Seis intervenções, em ordem de impacto.</p>
+
+        <div class="compare">
+          <figure>
+            <svg viewBox="0 0 200 210" style="width:100%;height:auto" role="img" aria-label="Bermuda piloto atual: apenas tecido, cós franzido, sem forro nem bolso">
+              <g stroke="var(--ink-faint)" fill="none" stroke-width="1.4">
+                <path d="M28 30 L172 30 L166 100 Q160 152 154 182 L150 196 L108 196 L100 140 L92 196 L50 196 L46 182 Q40 150 34 100 Z"/>
+                <path d="M28 30 Q100 40 172 30"/>
+                <path d="M100 40 L100 92"/>
+                <path d="M34 26 q8 10 16 0 q8 10 16 0 q8 10 16 0 q8 10 16 0 q8 10 16 0 q8 10 16 0 q8 10 16 0 q8 10 16 0 q8 10 16 0" stroke-width="1"/>
+              </g>
+              <g font-family="ui-monospace,monospace" font-size="8" letter-spacing="1.2" fill="var(--ink-faint)">
+                <text x="24" y="16">CÓS FRANZIDO</text>
+                <text x="52" y="128">SEM FORRO</text>
+                <text x="48" y="144">SEM BOLSO</text>
+                <text x="50" y="160">SEM NESGA</text>
+              </g>
+            </svg>
+            <figcaption>Antes · piloto</figcaption>
+          </figure>
+          <figure class="depois">
+            <svg viewBox="0 0 200 210" style="width:100%;height:auto" role="img" aria-label="Bermuda redesenhada: forro boxer com jacquard, nesga, bolso com zíper, fenda lateral">
+              <g stroke="var(--ink-faint)" fill="none" stroke-width="1.4">
+                <path d="M28 30 L172 30 L166 100 Q160 152 154 182 L150 196 L108 196 L100 140 L92 196 L50 196 L46 182 Q40 150 34 100 Z"/>
+                <path d="M30 52 Q100 62 170 52"/>
+              </g>
+              <rect x="28" y="30" width="144" height="22" fill="var(--penumbra)" opacity="0.55"/>
+              <g font-family="ui-monospace,monospace" font-size="7" letter-spacing="2.4" fill="var(--copper)">
+                <text x="40" y="45">ÉCLAT ✦ ÉCLAT ✦</text>
+              </g>
+              <g stroke="var(--copper)" stroke-width="3.4" fill="none" stroke-linecap="butt">
+                <path d="M92 52 Q89 68 88 84"/><path d="M110 52 Q113 68 114 84"/>
+              </g>
+              <g fill="var(--brass)">
+                <rect x="84" y="84" width="8" height="12" rx="1.4"/>
+                <rect x="110" y="84" width="8" height="12" rx="1.4"/>
+                <circle cx="92" cy="51" r="3"/><circle cx="110" cy="51" r="3"/>
+              </g>
+              <!-- boxer liner -->
+              <path d="M40 62 Q100 74 160 62 L154 122 L112 122 L100 104 L88 122 L46 122 Z" fill="var(--copper)" opacity="0.14" stroke="var(--copper)" stroke-width="1.1" stroke-dasharray="3 3"/>
+              <!-- gusset -->
+              <path d="M100 104 L110 118 L100 132 L90 118 Z" fill="none" stroke="var(--copper)" stroke-width="1.3"/>
+              <!-- zip pocket -->
+              <path d="M120 74 L152 78" stroke="var(--copper)" stroke-width="1.8" fill="none"/>
+              <rect x="148" y="74" width="7" height="9" rx="1.4" fill="var(--brass)"/>
+              <!-- side vent -->
+              <path d="M154 168 L152 192" stroke="var(--copper)" stroke-width="2"/>
+              <g font-family="ui-monospace,monospace" font-size="8" letter-spacing="1.2" fill="var(--copper)">
+                <text x="16" y="16">CÓS + JACQUARD</text>
+                <text x="120" y="68">BOLSO C/ ZÍPER</text>
+                <text x="2" y="112">FORRO BOXER</text>
+                <text x="112" y="136">NESGA</text>
+                <text x="120" y="186">FENDA 5CM</text>
+              </g>
+            </svg>
+            <figcaption>Depois · Meridiano</figcaption>
+          </figure>
+        </div>
+
+        <ol class="fixes">
+          <li><span class="q">Forro cueca boxer — resolve metade do problema sozinho</span><span class="n">Boxer interno em malha dry, costura flatlock, com elástico jacquard Éclat de 25 mm na cintura do forro. O cara veste, abaixa a cabeça, vê a marca escrita por dentro. É esse instante que vale os R$&nbsp;200.</span></li>
+          <li><span class="q">Cós estruturado</span><span class="n">Elástico de 40 mm em cós construído — não franzido — com cordão chato, ponteira metálica e ilhós metálico. Mesma correção do short feminino.</span></li>
+          <li><span class="q">Nesga no entrepernas</span><span class="n">Losango de tecido no gancho. Custa quase nada, aparece só por dentro, e é argumento de venda direto: liberdade de movimento. Todo cliente de treino reconhece.</span></li>
+          <li><span class="q">Bolso traseiro com zíper embutido</span><span class="n">Com puxador de cordinha. Hoje não há onde guardar nada — é a reclamação nº 1 em bermuda de treino.</span></li>
+          <li><span class="q">Fenda lateral de 5 cm com travete na barra</span><span class="n">Muda a silhueta de bermuda de pano para short de corrida e aumenta a amplitude. Uma operação.</span></li>
+          <li><span class="q">Assinatura</span><span class="n">Monograma em silicone relevo tom sobre tom na perna esquerda, 20 mm, altura do meio da coxa. Etiqueta tecida na barra lateral.</span></li>
+        </ol>
+
+        <p class="wide" style="margin-top:1.6rem">Mesma bermuda, mesmo tecido — agora com forro, nesga, bolso com zíper, cós de verdade, fenda e dois pontos de marca. Aí ela custa R$&nbsp;200.</p>
+      </section>
+
+      <section>
+        <p class="eyebrow"><span class="num">07</span> — Unidade</p>
+        <h2>Cinco elementos atravessam as três peças. Nenhum é costura aparente.</h2>
+        <div class="tablewrap">
+          <table>
+            <thead><tr><th>Elemento</th><th>Onde aparece</th></tr></thead>
+            <tbody>
+              <tr><td>Elástico jacquard Éclat</td><td>punho da camisa · cós do short · cós do forro da bermuda</td></tr>
+              <tr><td>Ferragem latão fosco cobre</td><td>cursor de zíper · ponteira de cordão · ilhós — idênticos nas três</td></tr>
+              <tr><td>Zíper embutido</td><td>frente e bolso da camisa · bolso traseiro do short e da bermuda</td></tr>
+              <tr><td>Etiqueta tecida de barra</td><td>lateral inferior das três</td></tr>
+              <tr><td>Monograma em relevo</td><td>peito da camiseta · perna da bermuda</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section>
+        <p class="eyebrow"><span class="num">08</span> — Aviamentos</p>
+        <h2>A lista para pedir orçamento agora.</h2>
+        <p class="wide">Os três primeiros servem a marca inteira, não só esta família — por isso valem o mínimo de fábrica.</p>
+        <div class="tablewrap">
+          <table>
+            <thead><tr><th>Aviamento</th><th>Especificação</th><th>Onde usa</th></tr></thead>
+            <tbody>
+              <tr><td>Elástico jacquard 40 mm</td><td>fundo Penumbra ou Osso, monograma + ÉCLAT em Cobre, repetição a cada 8 cm</td><td>cós de short, bermuda, legging</td></tr>
+              <tr><td>Elástico jacquard 25 mm</td><td>mesma arte, reduzida</td><td>punho de camisa, cós de forro, top</td></tr>
+              <tr><td>Ponteira metálica</td><td>latão fosco envelhecido, tubular, monograma gravado a laser</td><td>todos os cordões da marca</td></tr>
+              <tr><td>Ilhós metálico 5 mm</td><td>latão fosco, mesmo acabamento da ponteira</td><td>todos os cós com cordão</td></tr>
+              <tr><td>Cordão chato 12 mm</td><td>Cobre e tom sobre tom</td><td>short, bermuda, barra da camisa</td></tr>
+              <tr><td>Zíper nº5 destacável 2 vias</td><td>fita tom sobre tom, cursor com puxador monograma vazado</td><td>frente da camisa</td></tr>
+              <tr><td>Zíper nº3 embutido</td><td>fita tom sobre tom, puxador de cordinha com ponteira</td><td>bolsos</td></tr>
+              <tr><td>Etiqueta tecida de barra</td><td>15 × 50 mm dobrada, ÉCLAT tecido em Cobre sobre Osso</td><td>todas as peças</td></tr>
+              <tr><td>Aplique silicone 3D</td><td>tom sobre tom — 8 mm, 12 mm e 20 mm</td><td>camiseta, costas, bermuda</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="verdict">
+          <p class="eyebrow">Atenção ao mínimo do jacquard</p>
+          <p>Fábrica de elástico costuma trabalhar com 500 a 1000 m por arte. Parece muito, mas 500 m atende short, bermuda, legging e top da coleção inteira — e é o aviamento que mais carrega a marca. Peça as duas larguras na mesma arte, na mesma cotação.</p>
+        </div>
+      </section>
+
+      <section>
+        <p class="eyebrow"><span class="num">09</span> — Execução</p>
+        <h2>Cinco passos, nesta ordem.</h2>
+        <ol class="fixes">
+          <li><span class="q">Cotar os aviamentos hoje</span><span class="n">O jacquard e as ponteiras têm o prazo mais longo da lista e travam tudo o resto. Comece por eles.</span></li>
+          <li><span class="q">Piloto 2 da camisa no Caminho A</span><span class="n">Zíper embutido de duas vias e gola funil, usando o mesmo molde de corpo. Uma peça.</span></li>
+          <li><span class="q">Piloto 2 do short</span><span class="n">Cós construído, short interno e cordão novo. Uma peça.</span></li>
+          <li><span class="q">Piloto 2 da bermuda</span><span class="n">Forro boxer, nesga e bolso com zíper. Uma peça.</span></li>
+          <li><span class="q">Prova de mão</span><span class="n">Entregue as três a alguém que não conhece o projeto, sem falar nada, e pergunte quanto custa. Se a bermuda não passar de R$&nbsp;150 na resposta, ainda falta construção.</span></li>
+        </ol>
+      </section>
+
+      <section>
+        <p class="eyebrow"><span class="num">10</span> — O que preciso de você</p>
+        <h2>Cinco respostas e eu sigo para as fichas.</h2>
+        <ol class="fixes">
+          <li><span class="q">Camisa: Caminho A, B ou C?</span><span class="n">Minha recomendação é A — é a única que faz a peça mudar de categoria de verdade, e o custo extra é um zíper e uma carcela interna.</span></li>
+          <li><span class="q">Cós do short: jacquard interno ou exposto?</span><span class="n">Exposto é mais ousado e reconhece de longe. Interno é mais seguro. Custo igual.</span></li>
+          <li><span class="q">Qual mínimo a fábrica de elástico aceita?</span><span class="n">Define se o jacquard entra já nesta família ou só na próxima.</span></li>
+          <li><span class="q">A bermuda com forro ainda fecha no seu custo-alvo?</span><span class="n">Se não fechar, o forro entra e algo sai — e o que sai é a fenda lateral, nunca o forro.</span></li>
+          <li><span class="q">Manda as inspirações que você tem</span><span class="n">Quero ver antes de propormos o registro da segunda coleção. Ela não precisa ser Le Trait, e é melhor escolher isso olhando referência junto.</span></li>
+        </ol>
+      </section>
+
+      <hr class="rule">
+      <footer>ÉCLAT · Meridiano · Lapidação da família Athleisure</footer>
+
+    </main>
+  </div>
+</div>
