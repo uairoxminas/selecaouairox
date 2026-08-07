@@ -12,6 +12,7 @@ Depois de Lumière — a luz em si — *Nuance* é a luz em variação: a grada�
 
 - **Eclipse** — macacão canelado. *Fechado — ver abaixo.*
 - **Alvorada** — macacão flare. *Fechado — ver abaixo.*
+- **Fulgor** — conjunto top + short bronze. *Fechado — ver abaixo.*
 - Uma legging com cropped *(referência de inspiração ainda não recebida)*
 
 ---
@@ -123,4 +124,55 @@ A primeira geração tinha colocado o monograma no peito esquerdo — corrigido 
 ### Pendências
 
 1. Confirmar a cor caramelo da etiqueta e a cor bronze do tecido contra a amostra física.
+2. Tabela de medidas para a ficha técnica de produção completa.
+
+---
+
+## Peça 003 · FULGOR
+
+Conjunto top + short, poliamida lisa bronze/terracota. Peça já existente na família Canelado Grafite de Lumière (top Orvalho) — ver `fichas/referencia-familia-canelado-grafite.png`, prancha da estilista — desenvolvida em tecido e cor novos e, ao longo do processo, com construção própria o suficiente para deixar de ser drop e virar peça de Nuance. *Fulgor* é o lampejo, o brilho repentino — nome escolhido porque a costura em relevo escultural da peça é desenhada para pegar luz, literalmente um fulgor.
+
+**Resolução da pendência de classificação:** esta peça começou registrada em `DROP-VITRAIL.md` como possível item do drop Vitrail (mesma peça, cor nova). Ao longo do desenvolvimento ganhou construção própria — costura empina bumbum nas costas do short, costas do top abertas (sem a escada original), elástico estampado com o monograma — o suficiente para não caber mais na definição de drop. Reclassificada como peça 003 da coleção Nuance.
+
+### Construção
+
+| Elemento | Definição |
+|---|---|
+| Tecido | Poliamida lisa bronze/terracota — mesmo tecido e cor do Alvorada (peça 002) |
+| Costura, top frente | Estrutural tom sobre tom em relevo nos recortes princesa, sem contraste — Registro O Relevo |
+| Elástico, top | Faixa elástica bronze na base do top (fecha logo abaixo do busto, tecido esticado sem franzido), estampada em todo o comprimento com o monograma ÉCLAT repetido tipo marca d'água, tom sobre tom |
+| Costura, top costas | Costas abertas — duas alças retas sem cruzar, convergindo direto no elástico da base, sem travessas/escada e sem recorte vazado |
+| Costura, short frente | Costuras normais de construção (centro frente, laterais, cós) presentes mas **sem costura viva** — sem pesponto duplo ou relevo aparente |
+| Costura, short costas | **Costura empina bumbum** — recorte em coração na pala, subindo e abraçando cada lado do glúteo, pesponto duplo bem marcado |
+| Marca, top | Logotipo ÉCLAT em relevo no peito (tom sobre tom) + elástico estampado na base (ver acima) |
+| Marca, short | Apenas um monograma emborrachado 3D caramelo (nó entrelaçado, ~3cm), na barra da perna — cós liso, sem logotipo, nada no meio da coxa |
+
+**Modelagem aprovada.** O short foge do Registro O Relevo do restante da peça — decisão explícita da usuária, não erro de geração. A costura empina bumbum e o elástico estampado são a resposta à pergunta "o que dá exclusividade à peça sem mudar a modelagem" — assinatura de construção e de marca, não de molde.
+
+Proposta descartada: um recorte vazado pequeno nas costas do top, no espírito do Eclipse, com peça de metal gravada onde as alças se cruzam — a usuária preferiu manter a modelagem original. Depois disso, pediu para simplificar a escada nas costas para um corte mais aberto (sem travessas), mantendo as duas alças retas.
+
+### Material desenvolvido
+
+- Render fotográfico frente do conjunto (top + short), modelo genérica — `fichas/orvalho-bronze-frente.png`
+- Render fotográfico frente com o avatar Soul da própria usuária — top com elástico estampado ÉCLAT na base, short com apenas o monograma caramelo na barra da perna, cabelo arrumado e maquiagem — `fichas/orvalho-bronze-frente-avatar.png`
+- Render fotográfico costas com o mesmo avatar — costas abertas (sem escada), costura empina bumbum no short — `fichas/orvalho-bronze-costas-avatar.png`
+- Desenho técnico (croqui plano) — `fichas/tec_fulgor_flat.png`, montado por `fichas/compose-flat-fulgor.py`
+
+### Nota técnica — geração com avatar próprio
+
+O caminho `soul_2` (único que aceita o avatar treinado, `soul_id`) alterou a modelagem da peça em duas tentativas seguidas — as alças cruzadas em X viraram alças retas simples, e surgiu uma etiqueta inventada no short que não existe na peça. Resolvido usando `nano_banana_pro` (o caminho que preserva construção com fidelidade) com **duas imagens de referência simultâneas**: a primeira como molde exato da peça (não pode mudar nada da construção), a segunda como referência só de rosto/identidade (uma foto do avatar) — pedindo para trocar apenas o rosto, mantendo a peça. **Registrado como método padrão** sempre que for preciso combinar avatar próprio com fidelidade de peça — evita depender do `soul_id`, que não segura construção.
+
+Rodadas de refinamento seguintes, todas com o mesmo método (peça aprovada como referência 1, foto de rosto como referência 2, pedido de alteração cirúrgica só no ponto indicado):
+
+1. Nova foto de retrato do mesmo avatar via `soul_2` (enquadramento e expressão diferentes) para variar a referência de rosto; top reduzido a um bralette bem curto terminando na linha do busto.
+2. Remoção da costura aparente do short (passou a ficar liso demais, sem nenhuma costura visível).
+3. Elástico abaixo do busto adicionado ao top, com o pedido explícito de manter o tecido esticado — sem franzido/gathering, mesmo com o elástico; troca da foto de rosto por um retrato mais elegante do avatar (cabelo arrumado, maquiagem); reinclusão das costuras de construção do short (centro frente, laterais, cós) que tinham sumido por completo na rodada anterior — mantendo, porém, a ausência de costura viva/pesponto aparente pedida.
+4. Toque final: o logotipo ÉCLAT desapareceu do peito numa das gerações — restaurado numa última passada cirúrgica sem alterar mais nada.
+5. Elástico da base do top estampado com o monograma ÉCLAT repetido em marca d'água tom sobre tom; costas simplificadas — removidas as travessas da escada, ficando as duas alças retas convergindo direto no elástico, um corte mais aberto; logotipo ÉCLAT caramelo adicionado ao cós do short e monograma emborrachado caramelo à coxa frontal.
+6. **Modelagem aprovada.** Correção final de marca no short: a usuária pediu só o monograma, na barra da perna — nada no meio da coxa e nada no cós. Removidos o logotipo do cós e o monograma da coxa, mantido apenas um monograma pequeno na barra.
+7. **Erro de monograma:** a rodada 6 gerou um símbolo "EC" inventado no lugar do monograma real (o nó entrelaçado de dois C, ver `fichas/monograma-eclat-cream.png`). O modelo de imagem não reproduz a arte oficial da marca a partir de descrição em texto. Corrigido subindo o arquivo do monograma como segunda imagem de referência (não só descrição) e pedindo cópia exata do desenho. **Regra registrada:** monograma sempre entra como imagem de referência, nunca só por texto.
+
+### Pendências
+
+1. Confirmar a cor bronze contra o cartão físico da Marazul (mesma pendência do Alvorada).
 2. Tabela de medidas para a ficha técnica de produção completa.
