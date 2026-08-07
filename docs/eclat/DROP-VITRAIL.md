@@ -16,6 +16,30 @@
 
 ---
 
+## Conjunto ORVALHO — colorway poliamida bronze
+
+Peça já existente da família Canelado Grafite (Lumière) — ver `fichas/referencia-familia-canelado-grafite.png`, prancha da estilista. Top com alças finas cruzadas em X na frente e escada nas costas, mais short de cintura alta com pala curva. Modelagem sem alteração.
+
+**Pendência de classificação:** o escopo do drop fala em "cor nova" — aqui a mudança é de **tecido** (canelado ribbed → poliamida lisa), não só de cor, o que é uma categoria maior de mudança. Registrado aqui por ser a mesma família nomeada no escopo, mas cabe reconsiderar se troca de tecido também deveria contar como molde/coleção nova, mesma dúvida já registrada para o Macacão Cáustica.
+
+| Elemento | Definição |
+|---|---|
+| Tecido | Poliamida lisa bronze/terracota — mesmo tecido e cor do Alvorada (Nuance, peça 002) |
+| Costura | Estrutural tom sobre tom em relevo, sem contraste — Registro O Relevo |
+| Marca | Logotipo ÉCLAT no peito do top, tom sobre tom — posição igual à prancha original, cor adaptada ao tecido novo |
+
+### Material desenvolvido
+
+- Render fotográfico frente do conjunto (top + short) — `fichas/orvalho-bronze-frente.png`
+
+### Pendências
+
+1. Resolver a classificação acima (drop vs. mudança de tecido que pede outra categoria).
+2. Costas do conjunto — ainda não geradas.
+3. Confirmar a cor bronze contra o cartão físico da Marazul (mesma pendência do Alvorada).
+
+---
+
 ## Peça em revisão de arquitetura · MACACÃO CÁUSTICA
 
 **Pendência:** esta peça tem molde próprio — não é cor nova de peça existente — então não se encaixa na definição de drop. Precisa ser reclassificada como peça da coleção **Nuance** (junto de Eclipse) ou confirmada como uma coleção à parte. Decisão do usuário, ainda em aberto. O desenvolvimento abaixo continua válido enquanto isso não é decidido.
