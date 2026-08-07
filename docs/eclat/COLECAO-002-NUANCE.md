@@ -11,7 +11,7 @@ Depois de Lumière — a luz em si — *Nuance* é a luz em variação: a grada�
 **Escopo definido:**
 
 - **Eclipse** — macacão canelado. *Fechado — ver abaixo.*
-- **Macaquinho A** — macacão flare, ainda sem nome. *Em desenvolvimento — ver abaixo.*
+- **Alvorada** — macacão flare. *Fechado — ver abaixo.*
 - Uma legging com cropped *(referência de inspiração ainda não recebida)*
 
 ---
@@ -80,9 +80,9 @@ Diferente do colorway cereja (bordado tom sobre tom): aqui a marca é **emborrac
 
 ---
 
-## Peça 002 · MACAQUINHO A (nome pendente)
+## Peça 002 · ALVORADA
 
-Macacão flare, referência fotográfica enviada pelo usuário (frente e costas, colorway off white de referência).
+Macacão flare, referência fotográfica enviada pelo usuário (frente e costas, colorway off white de referência). *Alvorada* é o amanhecer — luz quente nascendo, coerente com a cor bronze/terracota da peça, e contraponto narrativo ao Eclipse (que é a luz desaparecendo).
 
 ### Construção
 
@@ -111,9 +111,11 @@ A primeira geração tinha colocado o monograma no peito esquerdo — corrigido 
 
 - Render fotográfico frente — `fichas/macaquinhoA-bronze-frente.png`
 - Render fotográfico costas — `fichas/macaquinhoA-bronze-costas.png`
+- Desenho técnico (croqui plano) — `fichas/tec_alvorada_flat.png`, montado por `fichas/compose-flat-alvorada.py`
+
+**Correção de fidelidade:** a primeira versão do desenho técnico simplificou a costura da frente para um cós reto e uma linha só por perna — a peça real tem um recorte curvo sob o busto (tipo top nadador), um segundo cós em V, e duas linhas por perna formando um desenho em grão na coxa antes de correr soltas até a barra. Corrigido comparando direto contra o render fotográfico aprovado.
 
 ### Pendências
 
-1. Nome da peça.
-2. Desenho técnico — ainda não feito.
-3. Confirmar a cor caramelo da etiqueta contra a amostra física (referência: etiquetas heat-transfer já usadas em outras peças, enviada pelo usuário).
+1. Confirmar a cor caramelo da etiqueta e a cor bronze do tecido contra a amostra física.
+2. Tabela de medidas para a ficha técnica de produção completa.
