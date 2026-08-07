@@ -55,21 +55,24 @@ Mesma construção, mesma modelagem — só muda tecido, cor e acabamento de cos
 | Cor | Off white / cru — a confirmar contra o cartão físico da Marazul |
 | Costura | Estrutural aparente em bronze/terracota — dupla, visível em toda costura de construção (princesa, cós, laterais da perna). Contraste deliberado, não tom sobre tom |
 | Registro | Costura Invertida (ver `FAMILIA-ATHLEISURE-MERIDIANO.md`) — aqui aplicado pela primeira vez dentro de Nuance |
-| Marca | Nenhuma aplicada ainda — pendente decisão |
+| Marca, frente | Monograma emborrachado 3D off white (tom sobre tom), ~4 cm de altura, centralizado no cós |
+| Marca, costas | Logotipo ÉCLAT emborrachado 3D off white (tom sobre tom), ~7 cm de largura, tag centralizada no cós |
+
+Diferente do colorway cereja (bordado tom sobre tom): aqui a marca é **emborrachado 3D** — acabamento que segura melhor numa poliamida lisa e estica junto com o tecido sem furar a malha como a agulha do bordado.
 
 **Pendência de arquitetura:** o usuário indicou que essa poliamida lisa off white deve virar a base de outras peças novas da coleção — se confirmado, vira tecido-padrão de Nuance ao lado do canelado, não uma variação isolada do Eclipse.
 
 ### Material desenvolvido
 
 - Render fotográfico frente/costas do colorway cereja — `fichas/` (gerados a partir da referência, ver `ATIVOS-DIGITAIS.md`)
-- Render fotográfico frente do colorway off white/bronze — gerado a partir do render aprovado do colorway cereja + foto de referência da costura aparente + amostra física Marazul
+- Render fotográfico frente/costas do colorway off white/bronze, com marca emborrachada aplicada — `fichas/eclipse-offwhite-bronze-frente.png`, `fichas/eclipse-offwhite-bronze-costas.png`
 - Desenho técnico (croqui plano) — `fichas/tec_macacao_canelado_flat.png`, montado por `fichas/compose-flat-macacao-canelado.py` — feito em cima do colorway cereja, ainda não replicado para o off white
 - Material gráfico de apresentação — capa da coleção Nuance + página Eclipse, publicado como artifact (ver link no chat)
 
 ### Pendências
 
-1. Confirmar as duas cores (cereja e off white) contra o cartão físico da Marazul.
+1. Confirmar as duas cores (cereja e off white) e a cor da linha bronze contra o cartão físico da Marazul.
 2. Decidir se a poliamida lisa off white vira tecido-base da coleção.
-3. Decidir aplicação de marca no colorway off white — tom sobre tom como no cereja, ou acompanhar o contraste bronze da costura.
-4. Fechar nome e tabela de medidas para a ficha técnica de produção completa.
+3. Fechar nome e tabela de medidas para a ficha técnica de produção completa.
+4. Desenho técnico do colorway off white — ainda não feito.
 5. Segunda peça da coleção — próximo passo.
