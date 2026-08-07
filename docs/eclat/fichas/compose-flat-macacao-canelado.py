@@ -63,10 +63,10 @@ def main():
     page = Image.new("RGB", (W, H), (255, 255, 255))
     draw = ImageDraw.Draw(page)
 
-    centered_text(draw, W / 2, 36, "MACACAO CANELADO — PECA AINDA SEM NOME", f_title, TITLE_COL)
+    centered_text(draw, W / 2, 36, "ECLIPSE — MACACAO CANELADO", f_title, TITLE_COL)
     centered_text(
         draw, W / 2, 96,
-        "REGISTRO O RELEVO   ·   SEM ESCALA   ·   flat de referencia para o modelista",
+        "COLECAO NUANCE · PECA 001   ·   REGISTRO O RELEVO   ·   SEM ESCALA",
         f_sub, GREY,
     )
 

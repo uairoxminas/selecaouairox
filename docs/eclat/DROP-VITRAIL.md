@@ -1,23 +1,24 @@
-# ÉCLAT · Coleção 002 — VITRAIL
+# ÉCLAT · Drop — VITRAIL
 
 > Registro das decisões tomadas. Sem ficha técnica ainda — nada de produção nesta etapa.
 
----
+**Correção de arquitetura (ver `NOMENCLATURA-E-ARQUITETURA.md`):** Vitrail não é mais coleção 002 — é **drop**: mesma peça de Lumière já existente, cor ou acabamento novo, sem molde novo e sem ocupar número de coleção. A coleção 002 chama-se **Nuance**, e sua primeira peça definida é **Eclipse**.
 
-## A coleção
+## O drop
 
 *Vitrail* é vitral: uma única fonte de luz atravessando vidros coloridos, segurada por uma estrutura de linhas de chumbo. Lumière foi a luz; Vitrail é o que acontece quando ela encontra a cor.
 
 **Escopo definido:**
 
 - Mais opções de cor dos modelos fitness já desenvolvidos — famílias Canelado Grafite e Verde Exército e Licor
-- Dois macaquinhos novos
-- Uma legging com cropped *(referência de inspiração ainda não recebida)*
-- A primeira família da linha **ÉCLAT PACE**
+
+*(Os itens de molde novo que estavam listados aqui — os dois macaquinhos e a legging com cropped — migraram para o escopo da coleção Nuance. Ver `NOMENCLATURA-E-ARQUITETURA.md`.)*
 
 ---
 
-## Peça 001 · MACACÃO CÁUSTICA
+## Peça em revisão de arquitetura · MACACÃO CÁUSTICA
+
+**Pendência:** esta peça tem molde próprio — não é cor nova de peça existente — então não se encaixa na definição de drop. Precisa ser reclassificada como peça da coleção **Nuance** (junto de Eclipse) ou confirmada como uma coleção à parte. Decisão do usuário, ainda em aberto. O desenvolvimento abaixo continua válido enquanto isso não é decidido.
 
 *Cáustica* é o desenho que a luz forma ao atravessar uma superfície curva — o rastro no fundo de um copo d'água, a rede de luz no fundo de uma piscina. Uma linha que curva sobre um corpo.
 
@@ -51,7 +52,7 @@ Se na prova de vestir a cabeça não passar confortável, a abertura vai para a 
 | **PENUMBRA** | A sombra que ainda tem luz dentro | Capuccino | Costura aparente em off white | Costura Invertida |
 | **BRASA** | O vermelho que guarda luz por dentro | Framboesa | Relevo tom sobre tom | O Relevo |
 
-Os nomes descrevem **estados de luz**, não cores: Alva é luz nascendo, Penumbra é luz filtrada, Brasa é luz retida. A sequência deixa espaço para as próximas — Umbra, Halo, Zênite, Eclipse seguem livres.
+Os nomes descrevem **estados de luz**, não cores: Alva é luz nascendo, Penumbra é luz filtrada, Brasa é luz retida. A sequência deixa espaço para as próximas — Umbra, Halo, Zênite seguem livres. *(Eclipse já foi usado — é o macacão canelado da coleção Nuance.)*
 
 ### Regra de contraste descoberta nesta rodada
 
@@ -95,6 +96,6 @@ A versão **flare** não está morta: ela é a silhueta de campanha, e o viés �
 ## Pendências
 
 1. Confirmar a cor da Brasa contra o cartão físico da Marazul — Bronze e Capuccino lado a lado, sob luz de dia, com a linha na mão.
-2. Referência da legging com cropped, ainda não recebida.
-3. Nomes das duas peças novas de macaquinho.
-4. Primeira família da linha Pace.
+2. Decidir a reclassificação do Macacão Cáustica (ver nota de arquitetura acima).
+
+*(Pendências de molde novo — segundo macaquinho, legging com cropped, primeira família Pace — moveram para `NOMENCLATURA-E-ARQUITETURA.md`, escopo da coleção Nuance.)*
