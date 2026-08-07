@@ -16,9 +16,9 @@
 
 ---
 
-## Conjunto FULGOR (ex-Orvalho bronze) — migrado para Nuance
+## Conjunto AURÉOLA (ex-Orvalho bronze) — migrado para Nuance
 
-Peça iniciada aqui como colorway bronze do top Orvalho (Canelado Grafite, Lumière). **Pendência de classificação resolvida:** ao longo do desenvolvimento a peça ganhou construção própria (costura empina bumbum, costas abertas, elástico estampado) — deixou de ser "mesma peça, cor nova" e virou peça nova. Reclassificada e renomeada **Fulgor**, peça 003 da coleção Nuance. Registro completo em `COLECAO-002-NUANCE.md`.
+Peça iniciada aqui como colorway bronze do top Orvalho (Canelado Grafite, Lumière). **Pendência de classificação resolvida:** ao longo do desenvolvimento a peça ganhou construção própria (costura empina bumbum, costas abertas, elástico estampado) — deixou de ser "mesma peça, cor nova" e virou peça nova. Reclassificada e renomeada **Auréola**, peça 003 da coleção Nuance. Registro completo em `COLECAO-002-NUANCE.md`.
 
 ---
 

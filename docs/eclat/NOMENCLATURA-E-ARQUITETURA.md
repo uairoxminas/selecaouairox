@@ -93,9 +93,9 @@ Vitral é exatamente isso: uma única fonte de luz atravessando vidros coloridos
 
 Sempre nome de fenômeno de luz, em português ou latim.
 
-**Em uso:** Aurora · Solaris · Prisma · Vértice · Lumina · Radiance · Orvalho · **Eclipse** (macacão canelado, coleção Nuance, peça 001) · **Alvorada** (macacão flare, coleção Nuance, peça 002) · **Fulgor** (conjunto top + short bronze, coleção Nuance, peça 003)
+**Em uso:** Aurora · Solaris · Prisma · Vértice · Lumina · Radiance · Orvalho · **Eclipse** (macacão canelado, coleção Nuance, peça 001) · **Alvorada** (macacão flare, coleção Nuance, peça 002) · **Auréola** (conjunto top + short bronze, coleção Nuance, peça 003)
 
-**Banco para expansão:** Cáustica · Halo · Zênite · Nadir · Miragem · Penumbra · Difração · Coroa · Zodiacal · Umbra · Vitral · Alva
+**Banco para expansão:** Cáustica · Halo · Zênite · Nadir · Miragem · Penumbra · Difração · Coroa · Zodiacal · Umbra · Fulgor · Réstia · Vitral · Alva
 
 ---
 
@@ -105,7 +105,7 @@ Peças com molde novo — o que diferencia coleção de drop:
 
 - **Eclipse** — macacão canelado, gola halter faixa larga, cava alta sem manga, costas com recorte vazado real. *Definido — ver `COLECAO-002-NUANCE.md`.*
 - **Alvorada** — macacão flare, bronze, costura tom sobre tom. *Definido — ver `COLECAO-002-NUANCE.md`.*
-- **Fulgor** — conjunto top + short bronze, costura empina bumbum, costas abertas, elástico estampado. Começou como colorway do drop Vitrail e foi reclassificada por ganhar construção própria. *Definido — ver `COLECAO-002-NUANCE.md`.*
+- **Auréola** — conjunto top + short bronze, costura empina bumbum, costas abertas, elástico estampado. Começou como colorway do drop Vitrail e foi reclassificada por ganhar construção própria. *Definido — ver `COLECAO-002-NUANCE.md`.*
 - Uma legging com cropped *(referência de inspiração ainda não recebida)*
 
 A primeira família da linha **ÉCLAT PACE** segue fora da numeração de coleção — linha é permanente, entra quando o fornecedor de malha leve for resolvido, não precisa esperar a Nuance fechar.

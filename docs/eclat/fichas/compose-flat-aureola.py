@@ -1,17 +1,17 @@
 """
-Monta a pagina final do flat do Fulgor (conjunto top + short, peca 003 da
-Nuance) a partir de duas imagens ja prontas (tec_frente_fulgor_flat_raw.png /
-tec_costas_fulgor_flat_raw.png).
+Monta a pagina final do flat do Aureola (conjunto top + short, peca 003 da
+Nuance) a partir de duas imagens ja prontas (tec_frente_aureola_flat_raw.png /
+tec_costas_aureola_flat_raw.png).
 
 Mesmo metodo das pecas anteriores: croqui plano gerado a partir do render
 fotografico aprovado (construcao) e do flat vetorial do Alvorada (estilo).
 """
 from PIL import Image, ImageDraw, ImageFont, ImageChops
 
-FRENTE_RAW = "tec_frente_fulgor_flat_raw.png"
-COSTAS_RAW = "tec_costas_fulgor_flat_raw.png"
+FRENTE_RAW = "tec_frente_aureola_flat_raw.png"
+COSTAS_RAW = "tec_costas_aureola_flat_raw.png"
 SWATCH = "amostra-poliamida-offwhite-bronze.jpg"
-OUT = "tec_fulgor_flat.png"
+OUT = "tec_aureola_flat.png"
 
 TITLE_COL = (138, 47, 30)
 INK = (30, 20, 20)
@@ -60,7 +60,7 @@ def main():
     page = Image.new("RGB", (W, H), (255, 255, 255))
     draw = ImageDraw.Draw(page)
 
-    centered_text(draw, W / 2, 36, "FULGOR — CONJUNTO TOP + SHORT, BRONZE", f_title, TITLE_COL)
+    centered_text(draw, W / 2, 36, "AUREOLA — CONJUNTO TOP + SHORT, BRONZE", f_title, TITLE_COL)
     centered_text(
         draw, W / 2, 96,
         "COLECAO NUANCE · PECA 003   ·   SEM ESCALA",

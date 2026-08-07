@@ -12,7 +12,7 @@ Depois de Lumière — a luz em si — *Nuance* é a luz em variação: a grada�
 
 - **Eclipse** — macacão canelado. *Fechado — ver abaixo.*
 - **Alvorada** — macacão flare. *Fechado — ver abaixo.*
-- **Fulgor** — conjunto top + short bronze. *Fechado — ver abaixo.*
+- **Auréola** — conjunto top + short bronze. *Fechado — ver abaixo.*
 - Uma legging com cropped *(referência de inspiração ainda não recebida)*
 
 ---
@@ -128,9 +128,9 @@ A primeira geração tinha colocado o monograma no peito esquerdo — corrigido 
 
 ---
 
-## Peça 003 · FULGOR
+## Peça 003 · AURÉOLA
 
-Conjunto top + short, poliamida lisa bronze/terracota. Peça já existente na família Canelado Grafite de Lumière (top Orvalho) — ver `fichas/referencia-familia-canelado-grafite.png`, prancha da estilista — desenvolvida em tecido e cor novos e, ao longo do processo, com construção própria o suficiente para deixar de ser drop e virar peça de Nuance. *Fulgor* é o lampejo, o brilho repentino — nome escolhido porque a costura em relevo escultural da peça é desenhada para pegar luz, literalmente um fulgor.
+Conjunto top + short, poliamida lisa bronze/terracota. Peça já existente na família Canelado Grafite de Lumière (top Orvalho) — ver `fichas/referencia-familia-canelado-grafite.png`, prancha da estilista — desenvolvida em tecido e cor novos e, ao longo do processo, com construção própria o suficiente para deixar de ser drop e virar peça de Nuance. *Auréola* é o halo de luz em volta de uma forma — nome escolhido porque a costura empina bumbum desenha justamente esse contorno curvo, luminoso, ao redor do corpo.
 
 **Resolução da pendência de classificação:** esta peça começou registrada em `DROP-VITRAIL.md` como possível item do drop Vitrail (mesma peça, cor nova). Ao longo do desenvolvimento ganhou construção própria — costura empina bumbum nas costas do short, costas do top abertas (sem a escada original), elástico estampado com o monograma — o suficiente para não caber mais na definição de drop. Reclassificada como peça 003 da coleção Nuance.
 
@@ -156,7 +156,7 @@ Proposta descartada: um recorte vazado pequeno nas costas do top, no espírito d
 - Render fotográfico frente do conjunto (top + short), modelo genérica — `fichas/orvalho-bronze-frente.png`
 - Render fotográfico frente com o avatar Soul da própria usuária — top com elástico estampado ÉCLAT na base, short com apenas o monograma caramelo na barra da perna, cabelo arrumado e maquiagem — `fichas/orvalho-bronze-frente-avatar.png`
 - Render fotográfico costas com o mesmo avatar — costas abertas (sem escada), costura empina bumbum no short — `fichas/orvalho-bronze-costas-avatar.png`
-- Desenho técnico (croqui plano) — `fichas/tec_fulgor_flat.png`, montado por `fichas/compose-flat-fulgor.py`
+- Desenho técnico (croqui plano) — `fichas/tec_aureola_flat.png`, montado por `fichas/compose-flat-aureola.py`
 
 ### Nota técnica — geração com avatar próprio
 
