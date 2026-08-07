@@ -25,16 +25,21 @@ Peça já existente da família Canelado Grafite (Lumière) — ver `fichas/refe
 | Elemento | Definição |
 |---|---|
 | Tecido | Poliamida lisa bronze/terracota — mesmo tecido e cor do Alvorada (Nuance, peça 002) |
-| Costura, top | Estrutural tom sobre tom em relevo nos recortes princesa, sem contraste — Registro O Relevo. Elástico fino logo abaixo do busto fecha o top, tecido esticado (sem franzido) |
-| Costura, short | Costuras normais de construção (centro frente, laterais, cós) presentes mas **sem costura viva** — sem pesponto duplo ou relevo aparente |
+| Costura, top frente | Estrutural tom sobre tom em relevo nos recortes princesa, sem contraste — Registro O Relevo. Elástico fino logo abaixo do busto fecha o top, tecido esticado (sem franzido) |
+| Costura, top costas | Modelagem original em escada — duas alças retas sem cruzar, três travessas horizontais entre elas, sem recorte vazado |
+| Costura, short frente | Costuras normais de construção (centro frente, laterais, cós) presentes mas **sem costura viva** — sem pesponto duplo ou relevo aparente |
+| Costura, short costas | **Costura empina bumbum** — recorte em coração na pala, subindo e abraçando cada lado do glúteo, pesponto duplo bem marcado |
 | Marca | Logotipo ÉCLAT no peito do top, tom sobre tom — posição igual à prancha original, cor adaptada ao tecido novo |
 
-O short foge do Registro O Relevo do restante da peça — decisão explícita da usuária, não erro de geração.
+O short foge do Registro O Relevo do restante da peça — decisão explícita da usuária, não erro de geração. A costura empina bumbum nas costas do short é a resposta à pergunta "o que dá exclusividade à peça sem mudar a modelagem" — assinatura de construção, não de molde.
+
+Proposta descartada: um recorte vazado pequeno nas costas do top, no espírito do Eclipse, com peça de metal gravada onde as alças se cruzam — a usuária preferiu manter a modelagem original e levar a assinatura para a costura do short em vez de alterar o corte.
 
 ### Material desenvolvido
 
 - Render fotográfico frente do conjunto (top + short), modelo genérica — `fichas/orvalho-bronze-frente.png`
 - Render fotográfico frente com o avatar Soul da própria usuária — top curto com elástico abaixo do busto (tecido esticado, sem franzido), short com costuras normais e sem costura viva, cabelo arrumado e maquiagem — `fichas/orvalho-bronze-frente-avatar.png`
+- Render fotográfico costas com o mesmo avatar — modelagem original em escada, costura empina bumbum no short — `fichas/orvalho-bronze-costas-avatar.png`
 
 ### Nota técnica — geração com avatar próprio
 
@@ -50,8 +55,7 @@ Rodadas de refinamento seguintes, todas com o mesmo método (peça aprovada como
 ### Pendências
 
 1. Resolver a classificação acima (drop vs. mudança de tecido que pede outra categoria).
-2. Costas do conjunto — ainda não geradas.
-3. Confirmar a cor bronze contra o cartão físico da Marazul (mesma pendência do Alvorada).
+2. Confirmar a cor bronze contra o cartão físico da Marazul (mesma pendência do Alvorada).
 
 ---
 
