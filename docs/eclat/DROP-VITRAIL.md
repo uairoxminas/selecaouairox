@@ -25,17 +25,22 @@ Peça já existente da família Canelado Grafite (Lumière) — ver `fichas/refe
 | Elemento | Definição |
 |---|---|
 | Tecido | Poliamida lisa bronze/terracota — mesmo tecido e cor do Alvorada (Nuance, peça 002) |
-| Costura | Estrutural tom sobre tom em relevo, sem contraste — Registro O Relevo |
+| Costura, top | Estrutural tom sobre tom em relevo nos recortes princesa, sem contraste — Registro O Relevo |
+| Costura, short | **Sem costura viva** — acabamento liso, sem pesponto ou relevo aparente em nenhuma costura do short |
 | Marca | Logotipo ÉCLAT no peito do top, tom sobre tom — posição igual à prancha original, cor adaptada ao tecido novo |
+
+O short foge do Registro O Relevo do restante da peça — decisão explícita da usuária, não erro de geração.
 
 ### Material desenvolvido
 
 - Render fotográfico frente do conjunto (top + short), modelo genérica — `fichas/orvalho-bronze-frente.png`
-- Render fotográfico frente com o avatar Soul da própria usuária, top finalizado reto logo abaixo dos seios, short mais curto, cabelo preso — `fichas/orvalho-bronze-frente-avatar.png`
+- Render fotográfico frente com o avatar Soul da própria usuária — top curto reto logo abaixo dos seios, short mais curto e sem costura viva, cabelo preso — `fichas/orvalho-bronze-frente-avatar.png`
 
 ### Nota técnica — geração com avatar próprio
 
-O caminho `soul_2` (único que aceita o avatar treinado, `soul_id`) alterou a modelagem da peça em duas tentativas seguidas — as alças cruzadas em X viraram alças retas simples, e surgiu uma etiqueta inventada no short que não existe na peça. Resolvido usando `nano_banana_pro` (o caminho que preserva construção com fidelidade) com **duas imagens de referência simultâneas**: a primeira como molde exato da peça (não pode mudar nada da construção), a segunda como referência só de rosto/identidade (uma foto usada no treino do avatar) — pedindo para trocar apenas o rosto, mantendo a peça. Resultado manteve as alças em X, o recorte reto do top, a cor bronze correta e não inventou nenhuma etiqueta nova. **Registrar como método padrão** sempre que for preciso combinar avatar próprio com fidelidade de peça — evita depender do `soul_id`, que não segura construção.
+O caminho `soul_2` (único que aceita o avatar treinado, `soul_id`) alterou a modelagem da peça em duas tentativas seguidas — as alças cruzadas em X viraram alças retas simples, e surgiu uma etiqueta inventada no short que não existe na peça. Resolvido usando `nano_banana_pro` (o caminho que preserva construção com fidelidade) com **duas imagens de referência simultâneas**: a primeira como molde exato da peça (não pode mudar nada da construção), a segunda como referência só de rosto/identidade (uma foto do avatar) — pedindo para trocar apenas o rosto, mantendo a peça. **Registrado como método padrão** sempre que for preciso combinar avatar próprio com fidelidade de peça — evita depender do `soul_id`, que não segura construção.
+
+Ajustes refinados numa segunda rodada com o mesmo método: troca da foto de referência de rosto (gerado um novo retrato do mesmo avatar via `soul_2`, usado como segunda imagem em vez da foto de academia original) para variar o enquadramento; top reduzido para um bralette bem curto, terminando na linha do busto; e remoção pontual da costura aparente do short numa terceira geração, partindo do resultado já aprovado como referência única e pedindo a alteração cirúrgica só ali.
 
 ### Pendências
 
