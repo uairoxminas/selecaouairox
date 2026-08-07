@@ -117,6 +117,7 @@ A primeira geração tinha colocado o monograma no peito esquerdo — corrigido 
 
 1. A primeira versão simplificou a costura da frente para um cós reto e uma linha só por perna — a peça real tem um recorte curvo sob o busto, um segundo cós em V, e duas linhas por perna formando um desenho em grão na coxa antes de correr soltas até a barra.
 2. A segunda versão ainda errou o busto: desenhou uma curva única em formato coração fundindo dardo e costura. A peça real tem **dois sistemas de costura separados** — um dardo reto de cada lado, terminando em ponta, e abaixo dele, sem se conectar, uma costura quase reta (arco bem sutil) correndo de lado a lado. Corrigido comparando lado a lado com recortes bem próximos do render fotográfico aprovado, não só a peça inteira.
+3. A terceira rodada corrigiu dois erros a mais: na frente, as costuras das duas pernas estavam se fundindo no meio da barriga como se fosse um recorte só — a peça real tem uma costura central reta e independente, e cada perna com seu próprio recorte em grão, sem tocar a do lado. Nas costas, o cós tinha saído reto — a peça real tem uma curva suave descendo em direção ao centro, espelhando o V da frente.
 
 ### Pendências
 
