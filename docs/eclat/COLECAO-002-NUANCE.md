@@ -113,11 +113,12 @@ A primeira geração tinha colocado o monograma no peito esquerdo — corrigido 
 - Render fotográfico costas — `fichas/macaquinhoA-bronze-costas.png`
 - Desenho técnico (croqui plano) — `fichas/tec_alvorada_flat.png`, montado por `fichas/compose-flat-alvorada.py`
 
-**Correção de fidelidade (duas rodadas):**
+**Correção de fidelidade (quatro rodadas):**
 
 1. A primeira versão simplificou a costura da frente para um cós reto e uma linha só por perna — a peça real tem um recorte curvo sob o busto, um segundo cós em V, e duas linhas por perna formando um desenho em grão na coxa antes de correr soltas até a barra.
 2. A segunda versão ainda errou o busto: desenhou uma curva única em formato coração fundindo dardo e costura. A peça real tem **dois sistemas de costura separados** — um dardo reto de cada lado, terminando em ponta, e abaixo dele, sem se conectar, uma costura quase reta (arco bem sutil) correndo de lado a lado. Corrigido comparando lado a lado com recortes bem próximos do render fotográfico aprovado, não só a peça inteira.
 3. A terceira rodada corrigiu dois erros a mais: na frente, as costuras das duas pernas estavam se fundindo no meio da barriga como se fosse um recorte só — a peça real tem uma costura central reta e independente, e cada perna com seu próprio recorte em grão, sem tocar a do lado. Nas costas, o cós tinha saído reto — a peça real tem uma curva suave descendo em direção ao centro, espelhando o V da frente.
+4. A quarta rodada corrigiu o excesso: o "recorte em grão" da rodada 3 ainda estava errado — cada perna não tem duas costuras formando uma amêndoa, tem **uma costura só, com pesponto duplo** (duas linhas de linha bem próximas, não dois recortes de tecido separados). Confirmado com detecção de borda sobre a foto aprovada antes de refazer — método que vale manter para próximas peças quando a leitura da costura ficar em dúvida.
 
 ### Pendências
 
