@@ -30,7 +30,12 @@ Peça já existente da família Canelado Grafite (Lumière) — ver `fichas/refe
 
 ### Material desenvolvido
 
-- Render fotográfico frente do conjunto (top + short) — `fichas/orvalho-bronze-frente.png`
+- Render fotográfico frente do conjunto (top + short), modelo genérica — `fichas/orvalho-bronze-frente.png`
+- Render fotográfico frente com o avatar Soul da própria usuária, top finalizado reto logo abaixo dos seios, short mais curto, cabelo preso — `fichas/orvalho-bronze-frente-avatar.png`
+
+### Nota técnica — geração com avatar próprio
+
+O caminho `soul_2` (único que aceita o avatar treinado, `soul_id`) alterou a modelagem da peça em duas tentativas seguidas — as alças cruzadas em X viraram alças retas simples, e surgiu uma etiqueta inventada no short que não existe na peça. Resolvido usando `nano_banana_pro` (o caminho que preserva construção com fidelidade) com **duas imagens de referência simultâneas**: a primeira como molde exato da peça (não pode mudar nada da construção), a segunda como referência só de rosto/identidade (uma foto usada no treino do avatar) — pedindo para trocar apenas o rosto, mantendo a peça. Resultado manteve as alças em X, o recorte reto do top, a cor bronze correta e não inventou nenhuma etiqueta nova. **Registrar como método padrão** sempre que for preciso combinar avatar próprio com fidelidade de peça — evita depender do `soul_id`, que não segura construção.
 
 ### Pendências
 
