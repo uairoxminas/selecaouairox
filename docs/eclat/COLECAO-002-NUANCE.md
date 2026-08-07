@@ -66,8 +66,11 @@ Diferente do colorway cereja (bordado tom sobre tom): aqui a marca é **emborrac
 
 - Render fotográfico frente/costas do colorway cereja — `fichas/` (gerados a partir da referência, ver `ATIVOS-DIGITAIS.md`)
 - Render fotográfico frente/costas do colorway off white/bronze, com marca emborrachada aplicada — `fichas/eclipse-offwhite-bronze-frente.png`, `fichas/eclipse-offwhite-bronze-costas.png`
-- Desenho técnico (croqui plano) — `fichas/tec_macacao_canelado_flat.png`, montado por `fichas/compose-flat-macacao-canelado.py` — feito em cima do colorway cereja, ainda não replicado para o off white
+- Desenho técnico (croqui plano) do colorway cereja — `fichas/tec_macacao_canelado_flat.png`, montado por `fichas/compose-flat-macacao-canelado.py`
+- Desenho técnico (croqui plano) do colorway off white — `fichas/tec_macacao_offwhite_flat.png`, montado por `fichas/compose-flat-macacao-offwhite.py`
 - Material gráfico de apresentação — capa da coleção Nuance + página Eclipse, publicado como artifact (ver link no chat)
+
+**Erro recorrente e corrigido duas vezes nesta peça:** a gola halter e a faixa da nuca engrossaram — no render fotográfico e depois também no desenho técnico — toda vez que a geração acumulou tecido + cor + costura + marca no mesmo pedido. Corrigido nas duas frentes comparando lado a lado com a referência cereja aprovada, recorte igual. Ver regra registrada em `ATIVOS-DIGITAIS.md`.
 
 ### Pendências
 
