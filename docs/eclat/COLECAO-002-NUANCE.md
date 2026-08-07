@@ -45,14 +45,31 @@ Monograma bordado tom sobre tom no cós da frente. Logotipo ÉCLAT bordado tom s
 
 Canelado estica muito mais na largura que no comprimento. Em legging colada isso puxa o comprimento de gancho para baixo com o uso — o molde precisa de **altura de gancho reduzida** em relação ao mesmo macacão em malha lisa. Todos os painéis precisam ser cortados com a canela no mesmo sentido, senão o painel invertido muda de brilho em relação aos vizinhos e vira defeito visível.
 
+### Colorway 2 · Off white, poliamida lisa, costura bronze
+
+Mesma construção, mesma modelagem — só muda tecido, cor e acabamento de costura.
+
+| Elemento | Definição |
+|---|---|
+| Tecido | Poliamida lisa (sem canela) — **candidata a tecido-base das próximas peças novas da coleção** |
+| Cor | Off white / cru — a confirmar contra o cartão físico da Marazul |
+| Costura | Estrutural aparente em bronze/terracota — dupla, visível em toda costura de construção (princesa, cós, laterais da perna). Contraste deliberado, não tom sobre tom |
+| Registro | Costura Invertida (ver `FAMILIA-ATHLEISURE-MERIDIANO.md`) — aqui aplicado pela primeira vez dentro de Nuance |
+| Marca | Nenhuma aplicada ainda — pendente decisão |
+
+**Pendência de arquitetura:** o usuário indicou que essa poliamida lisa off white deve virar a base de outras peças novas da coleção — se confirmado, vira tecido-padrão de Nuance ao lado do canelado, não uma variação isolada do Eclipse.
+
 ### Material desenvolvido
 
-- Render fotográfico frente/costas — `fichas/` (gerados a partir da referência, ver `ATIVOS-DIGITAIS.md`)
-- Desenho técnico (croqui plano) — `fichas/tec_macacao_canelado_flat.png`, montado por `fichas/compose-flat-macacao-canelado.py`
+- Render fotográfico frente/costas do colorway cereja — `fichas/` (gerados a partir da referência, ver `ATIVOS-DIGITAIS.md`)
+- Render fotográfico frente do colorway off white/bronze — gerado a partir do render aprovado do colorway cereja + foto de referência da costura aparente + amostra física Marazul
+- Desenho técnico (croqui plano) — `fichas/tec_macacao_canelado_flat.png`, montado por `fichas/compose-flat-macacao-canelado.py` — feito em cima do colorway cereja, ainda não replicado para o off white
 - Material gráfico de apresentação — capa da coleção Nuance + página Eclipse, publicado como artifact (ver link no chat)
 
 ### Pendências
 
-1. Confirmar a cor contra o cartão físico da Marazul.
-2. Fechar nome e tabela de medidas para a ficha técnica de produção completa.
-3. Segunda peça da coleção — próximo passo.
+1. Confirmar as duas cores (cereja e off white) contra o cartão físico da Marazul.
+2. Decidir se a poliamida lisa off white vira tecido-base da coleção.
+3. Decidir aplicação de marca no colorway off white — tom sobre tom como no cereja, ou acompanhar o contraste bronze da costura.
+4. Fechar nome e tabela de medidas para a ficha técnica de produção completa.
+5. Segunda peça da coleção — próximo passo.
