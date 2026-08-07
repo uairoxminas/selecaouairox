@@ -25,8 +25,8 @@ Peça já existente da família Canelado Grafite (Lumière) — ver `fichas/refe
 | Elemento | Definição |
 |---|---|
 | Tecido | Poliamida lisa bronze/terracota — mesmo tecido e cor do Alvorada (Nuance, peça 002) |
-| Costura, top | Estrutural tom sobre tom em relevo nos recortes princesa, sem contraste — Registro O Relevo |
-| Costura, short | **Sem costura viva** — acabamento liso, sem pesponto ou relevo aparente em nenhuma costura do short |
+| Costura, top | Estrutural tom sobre tom em relevo nos recortes princesa, sem contraste — Registro O Relevo. Elástico fino logo abaixo do busto fecha o top, tecido esticado (sem franzido) |
+| Costura, short | Costuras normais de construção (centro frente, laterais, cós) presentes mas **sem costura viva** — sem pesponto duplo ou relevo aparente |
 | Marca | Logotipo ÉCLAT no peito do top, tom sobre tom — posição igual à prancha original, cor adaptada ao tecido novo |
 
 O short foge do Registro O Relevo do restante da peça — decisão explícita da usuária, não erro de geração.
@@ -34,13 +34,18 @@ O short foge do Registro O Relevo do restante da peça — decisão explícita d
 ### Material desenvolvido
 
 - Render fotográfico frente do conjunto (top + short), modelo genérica — `fichas/orvalho-bronze-frente.png`
-- Render fotográfico frente com o avatar Soul da própria usuária — top curto reto logo abaixo dos seios, short mais curto e sem costura viva, cabelo preso — `fichas/orvalho-bronze-frente-avatar.png`
+- Render fotográfico frente com o avatar Soul da própria usuária — top curto com elástico abaixo do busto (tecido esticado, sem franzido), short com costuras normais e sem costura viva, cabelo arrumado e maquiagem — `fichas/orvalho-bronze-frente-avatar.png`
 
 ### Nota técnica — geração com avatar próprio
 
 O caminho `soul_2` (único que aceita o avatar treinado, `soul_id`) alterou a modelagem da peça em duas tentativas seguidas — as alças cruzadas em X viraram alças retas simples, e surgiu uma etiqueta inventada no short que não existe na peça. Resolvido usando `nano_banana_pro` (o caminho que preserva construção com fidelidade) com **duas imagens de referência simultâneas**: a primeira como molde exato da peça (não pode mudar nada da construção), a segunda como referência só de rosto/identidade (uma foto do avatar) — pedindo para trocar apenas o rosto, mantendo a peça. **Registrado como método padrão** sempre que for preciso combinar avatar próprio com fidelidade de peça — evita depender do `soul_id`, que não segura construção.
 
-Ajustes refinados numa segunda rodada com o mesmo método: troca da foto de referência de rosto (gerado um novo retrato do mesmo avatar via `soul_2`, usado como segunda imagem em vez da foto de academia original) para variar o enquadramento; top reduzido para um bralette bem curto, terminando na linha do busto; e remoção pontual da costura aparente do short numa terceira geração, partindo do resultado já aprovado como referência única e pedindo a alteração cirúrgica só ali.
+Rodadas de refinamento seguintes, todas com o mesmo método (peça aprovada como referência 1, foto de rosto como referência 2, pedido de alteração cirúrgica só no ponto indicado):
+
+1. Nova foto de retrato do mesmo avatar via `soul_2` (enquadramento e expressão diferentes) para variar a referência de rosto; top reduzido a um bralette bem curto terminando na linha do busto.
+2. Remoção da costura aparente do short (passou a ficar liso demais, sem nenhuma costura visível).
+3. Elástico abaixo do busto adicionado ao top, com o pedido explícito de manter o tecido esticado — sem franzido/gathering, mesmo com o elástico; troca da foto de rosto por um retrato mais elegante do avatar (cabelo arrumado, maquiagem); reinclusão das costuras de construção do short (centro frente, laterais, cós) que tinham sumido por completo na rodada anterior — mantendo, porém, a ausência de costura viva/pesponto aparente pedida.
+4. Toque final: o logotipo ÉCLAT desapareceu do peito numa das gerações — restaurado numa última passada cirúrgica sem alterar mais nada.
 
 ### Pendências
 
