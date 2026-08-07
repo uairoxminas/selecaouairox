@@ -55,6 +55,7 @@ Rodadas de refinamento seguintes, todas com o mesmo método (peça aprovada como
 4. Toque final: o logotipo ÉCLAT desapareceu do peito numa das gerações — restaurado numa última passada cirúrgica sem alterar mais nada.
 5. Elástico da base do top estampado com o monograma ÉCLAT repetido em marca d'água tom sobre tom; costas simplificadas — removidas as travessas da escada, ficando as duas alças retas convergindo direto no elástico, um corte mais aberto; logotipo ÉCLAT caramelo adicionado ao cós do short e monograma emborrachado caramelo à coxa frontal.
 6. **Modelagem aprovada.** Correção final de marca no short: a usuária pediu só o monograma, na barra da perna — nada no meio da coxa e nada no cós. Removidos o logotipo do cós e o monograma da coxa, mantido apenas um monograma pequeno na barra.
+7. **Erro de monograma:** a rodada 6 gerou um símbolo "EC" inventado no lugar do monograma real (o nó entrelaçado de dois C, ver `fichas/monograma-eclat-cream.png`). O modelo de imagem não reproduz a arte oficial da marca a partir de descrição em texto. Corrigido subindo o arquivo do monograma como segunda imagem de referência (não só descrição) e pedindo cópia exata do desenho. **Regra registrada:** monograma sempre entra como imagem de referência, nunca só por texto.
 
 ### Pendências
 
