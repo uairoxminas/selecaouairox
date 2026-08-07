@@ -31,16 +31,16 @@ Peça já existente da família Canelado Grafite (Lumière) — ver `fichas/refe
 | Costura, short frente | Costuras normais de construção (centro frente, laterais, cós) presentes mas **sem costura viva** — sem pesponto duplo ou relevo aparente |
 | Costura, short costas | **Costura empina bumbum** — recorte em coração na pala, subindo e abraçando cada lado do glúteo, pesponto duplo bem marcado |
 | Marca, top | Logotipo ÉCLAT em relevo no peito (tom sobre tom) + elástico estampado na base (ver acima) |
-| Marca, short | Logotipo ÉCLAT caramelo no cós; monograma emborrachado 3D caramelo na coxa frontal (~4cm) |
+| Marca, short | Apenas um monograma emborrachado 3D caramelo (~3cm), na barra da perna — cós liso, sem logotipo, nada no meio da coxa |
 
-O short foge do Registro O Relevo do restante da peça — decisão explícita da usuária, não erro de geração. A costura empina bumbum nas costas do short e o elástico estampado do top são a resposta à pergunta "o que dá exclusividade à peça sem mudar a modelagem" — assinatura de construção e de marca, não de molde.
+**Modelagem aprovada.** O short foge do Registro O Relevo do restante da peça — decisão explícita da usuária, não erro de geração. A costura empina bumbum nas costas do short e o elástico estampado do top são a resposta à pergunta "o que dá exclusividade à peça sem mudar a modelagem" — assinatura de construção e de marca, não de molde.
 
 Proposta descartada: um recorte vazado pequeno nas costas do top, no espírito do Eclipse, com peça de metal gravada onde as alças se cruzam — a usuária preferiu manter a modelagem original. Depois disso, pediu para simplificar a escada nas costas para um corte mais aberto (sem travessas), mantendo as duas alças retas.
 
 ### Material desenvolvido
 
 - Render fotográfico frente do conjunto (top + short), modelo genérica — `fichas/orvalho-bronze-frente.png`
-- Render fotográfico frente com o avatar Soul da própria usuária — top com elástico estampado ÉCLAT na base, short com logo caramelo no cós e monograma caramelo na coxa, cabelo arrumado e maquiagem — `fichas/orvalho-bronze-frente-avatar.png`
+- Render fotográfico frente com o avatar Soul da própria usuária — top com elástico estampado ÉCLAT na base, short com apenas o monograma caramelo na barra da perna, cabelo arrumado e maquiagem — `fichas/orvalho-bronze-frente-avatar.png`
 - Render fotográfico costas com o mesmo avatar — costas abertas (sem escada), costura empina bumbum no short — `fichas/orvalho-bronze-costas-avatar.png`
 
 ### Nota técnica — geração com avatar próprio
@@ -54,6 +54,7 @@ Rodadas de refinamento seguintes, todas com o mesmo método (peça aprovada como
 3. Elástico abaixo do busto adicionado ao top, com o pedido explícito de manter o tecido esticado — sem franzido/gathering, mesmo com o elástico; troca da foto de rosto por um retrato mais elegante do avatar (cabelo arrumado, maquiagem); reinclusão das costuras de construção do short (centro frente, laterais, cós) que tinham sumido por completo na rodada anterior — mantendo, porém, a ausência de costura viva/pesponto aparente pedida.
 4. Toque final: o logotipo ÉCLAT desapareceu do peito numa das gerações — restaurado numa última passada cirúrgica sem alterar mais nada.
 5. Elástico da base do top estampado com o monograma ÉCLAT repetido em marca d'água tom sobre tom; costas simplificadas — removidas as travessas da escada, ficando as duas alças retas convergindo direto no elástico, um corte mais aberto; logotipo ÉCLAT caramelo adicionado ao cós do short e monograma emborrachado caramelo à coxa frontal.
+6. **Modelagem aprovada.** Correção final de marca no short: a usuária pediu só o monograma, na barra da perna — nada no meio da coxa e nada no cós. Removidos o logotipo do cós e o monograma da coxa, mantido apenas um monograma pequeno na barra.
 
 ### Pendências
 
