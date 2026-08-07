@@ -113,7 +113,10 @@ A primeira geração tinha colocado o monograma no peito esquerdo — corrigido 
 - Render fotográfico costas — `fichas/macaquinhoA-bronze-costas.png`
 - Desenho técnico (croqui plano) — `fichas/tec_alvorada_flat.png`, montado por `fichas/compose-flat-alvorada.py`
 
-**Correção de fidelidade:** a primeira versão do desenho técnico simplificou a costura da frente para um cós reto e uma linha só por perna — a peça real tem um recorte curvo sob o busto (tipo top nadador), um segundo cós em V, e duas linhas por perna formando um desenho em grão na coxa antes de correr soltas até a barra. Corrigido comparando direto contra o render fotográfico aprovado.
+**Correção de fidelidade (duas rodadas):**
+
+1. A primeira versão simplificou a costura da frente para um cós reto e uma linha só por perna — a peça real tem um recorte curvo sob o busto, um segundo cós em V, e duas linhas por perna formando um desenho em grão na coxa antes de correr soltas até a barra.
+2. A segunda versão ainda errou o busto: desenhou uma curva única em formato coração fundindo dardo e costura. A peça real tem **dois sistemas de costura separados** — um dardo reto de cada lado, terminando em ponta, e abaixo dele, sem se conectar, uma costura quase reta (arco bem sutil) correndo de lado a lado. Corrigido comparando lado a lado com recortes bem próximos do render fotográfico aprovado, não só a peça inteira.
 
 ### Pendências
 
