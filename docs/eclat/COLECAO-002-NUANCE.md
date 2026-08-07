@@ -160,11 +160,20 @@ Proposta descartada: um recorte vazado pequeno nas costas do top, no espírito d
 
 ### Colorway 2 · Canelado cereja (tecido do Eclipse)
 
-Mesma construção, mesmo avatar — só muda o tecido: da poliamida lisa bronze para o canelado cereja/framboesa do Eclipse (ver `fichas/amostra-canelado.jpg`). Nervuras finas visíveis, cor vermelho cereja. Elástico da base do top e monograma da barra do short passam de estampado/emborrachado para relevo tom sobre tom tipo jacquard — acabamento que combina melhor com a malha canelada do que impressão digital.
+Mesma construção, mesmo avatar, mesmo render aprovado do colorway bronze — só muda o tecido: da poliamida lisa para o canelado cereja/framboesa do Eclipse (ver `fichas/amostra-canelado.jpg`). Nervuras finas visíveis, cor vermelho cereja. Elástico da base do top mantém a faixa larga com "ECLAT" repetido, igual ao bronze — só recolorida.
 
 - Render fotográfico frente, avatar da usuária, canelado cereja — `fichas/aureola-canelado-cereja-frente.png`
+- Render fotográfico costas, mesma modelagem do colorway bronze, recolorido — `fichas/aureola-canelado-cereja-costas.png`
+- Desenho técnico (croqui plano) — `fichas/tec_aureola_cereja_flat.png`, montado por `fichas/compose-flat-aureola-cereja.py`
 
-**Pendência:** costas ainda não geradas neste colorway; confirmar a cor cereja contra o cartão físico da Marazul (mesma pendência do Eclipse).
+**Nota de geração (três rodadas nas costas):**
+
+1. Primeira tentativa saiu com as alças cruzando em X — construção diferente da aprovada. A usuária pediu para registrar essa variante à parte (ver `fichas/aureola-costas-alca-x-variante.png`, guardada para referência futura, não faz parte do Auréola) e corrigir para a modelagem correta.
+2. Segunda tentativa corrigiu as alças (retas, sem cruzar) mas ainda divergiu em detalhe: a faixa elástica saiu fina com textura tipo jacquard, diferente da faixa larga com "ECLAT" em texto repetido que a peça bronze realmente tem. A usuária apontou o erro: *"o top aureola não é esse que vc desenhou, é o que vc criou no bronze"*.
+3. Corrigido usando o método mais simples e confiável: em vez de pedir para "copiar a construção" por descrição, usado o próprio render aprovado do bronze como referência única e pedindo troca **apenas do tecido/cor** — mesma técnica que já tinha funcionado bem na frente. Resultado bateu exatamente com o bronze. **Regra reforçada:** para variar só cor/tecido de uma peça já aprovada, trocar o tecido a partir do render aprovado é mais confiável do que descrever a construção a partir de outra referência.
+4. O desenho técnico das costas seguiu o mesmo padrão de erro — o primeiro desenhou um recorte em arco com textura de tela em vez do triângulo simples da peça real. Corrigido regerando a partir do render fotográfico já corrigido (rodada 3).
+
+**Pendência:** confirmar a cor cereja contra o cartão físico da Marazul (mesma pendência do Eclipse).
 
 ### Nota técnica — geração com avatar próprio
 
