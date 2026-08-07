@@ -11,7 +11,7 @@ Depois de Lumière — a luz em si — *Nuance* é a luz em variação: a grada�
 **Escopo definido:**
 
 - **Eclipse** — macacão canelado. *Fechado — ver abaixo.*
-- Um segundo macaquinho, ainda não desenvolvido
+- **Macaquinho A** — macacão flare, ainda sem nome. *Em desenvolvimento — ver abaixo.*
 - Uma legging com cropped *(referência de inspiração ainda não recebida)*
 
 ---
@@ -77,5 +77,40 @@ Diferente do colorway cereja (bordado tom sobre tom): aqui a marca é **emborrac
 1. Confirmar as duas cores (cereja e off white) e a cor da linha bronze contra o cartão físico da Marazul.
 2. Decidir se a poliamida lisa off white vira tecido-base da coleção.
 3. Fechar nome e tabela de medidas para a ficha técnica de produção completa.
-4. Desenho técnico do colorway off white — ainda não feito.
-5. Segunda peça da coleção — próximo passo.
+
+---
+
+## Peça 002 · MACAQUINHO A (nome pendente)
+
+Macacão flare, referência fotográfica enviada pelo usuário (frente e costas, colorway off white de referência).
+
+### Construção
+
+| Elemento | Definição |
+|---|---|
+| Silhueta | Macacão inteiro |
+| Decote | Quadrado/reto, alças finas reguláveis (regulador visível) |
+| Corpo | Ajustado, com recorte horizontal na cintura |
+| Perna | Flare — abre a partir da coxa até a barra larga |
+| Traçado | Costuras curvas nas laterais da perna, do quadril à barra |
+
+### Colorways gerados — frente apenas
+
+Duas opções de acabamento, mesma cor de fundo, mesmo monograma off white no peito esquerdo, ~3-4cm:
+
+| Opção | Tecido | Costura | Registro |
+|---|---|---|---|
+| 1 | Bronze/terracota liso | Tom sobre tom, em relevo — sem contraste de cor | O Relevo |
+| 2 | Bronze/terracota liso | Contraste off white, visível | Costura Invertida |
+
+### Material desenvolvido
+
+- Render fotográfico frente, colorway bronze, opção tom sobre tom — `fichas/macaquinhoA-bronze-toneontone-frente.png`
+- Render fotográfico frente, colorway bronze, opção contraste — `fichas/macaquinhoA-bronze-contraste-frente.png`
+
+### Pendências
+
+1. Nome da peça.
+2. Costas — ainda não geradas neste colorway.
+3. Desenho técnico — ainda não feito.
+4. Escolha entre as duas opções de costura (tom sobre tom vs. contraste).
