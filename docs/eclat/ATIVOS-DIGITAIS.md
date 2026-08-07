@@ -42,6 +42,8 @@
 
   Regra: **peça definida se gera a partir da referência.** O avatar serve para julgar proporção e comprimento de peça nova, não para catálogo de peça já aprovada. Trocar de caminho é decisão do usuário, e precisa ser avisada antes, não depois.
 
+- **Mesmo gerando a partir da referência certa, detalhe fino de construção pode derivar quando a instrução acumula muita mudança de uma vez.** No Eclipse (halter fino, faixa de nuca estreita), pedir fazenda + cor + costura + logo no mesmo prompt engordou a faixa da gola e da nuca para o dobro da largura real — sem trocar de caminho, sem imagem de texto, só por acúmulo de instrução. Correção: comparar sempre o resultado lado a lado com a referência aprovada na mesma região (recorte igual, mesmo enquadramento) antes de entregar, não só olhar a peça inteira.
+
 ---
 
 ## Marca
