@@ -26,10 +26,14 @@ f_small = ImageFont.truetype(FONT_DIR + "DejaVuSans.ttf", 20)
 f_note = ImageFont.truetype(FONT_DIR + "DejaVuSans-Bold.ttf", 20)
 
 
-def trim_white(im, pad=20):
+def trim_white(im, pad=20, threshold=12):
     bg = Image.new("RGB", im.size, (255, 255, 255))
     diff = ImageChops.difference(im, bg)
-    bbox = diff.getbbox()
+    # nano_banana backgrounds are near-white but noisy (off by a few units),
+    # so a plain getbbox() on the raw diff treats the whole canvas as
+    # "content" and trim_white becomes a no-op. Threshold the diff first.
+    mask = diff.convert("L").point(lambda p: 255 if p > threshold else 0)
+    bbox = mask.getbbox()
     if bbox:
         l, t, r, b = bbox
         l, t = max(l - pad, 0), max(t - pad, 0)
