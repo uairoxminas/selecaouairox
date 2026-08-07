@@ -25,21 +25,23 @@ Peça já existente da família Canelado Grafite (Lumière) — ver `fichas/refe
 | Elemento | Definição |
 |---|---|
 | Tecido | Poliamida lisa bronze/terracota — mesmo tecido e cor do Alvorada (Nuance, peça 002) |
-| Costura, top frente | Estrutural tom sobre tom em relevo nos recortes princesa, sem contraste — Registro O Relevo. Elástico fino logo abaixo do busto fecha o top, tecido esticado (sem franzido) |
-| Costura, top costas | Modelagem original em escada — duas alças retas sem cruzar, três travessas horizontais entre elas, sem recorte vazado |
+| Costura, top frente | Estrutural tom sobre tom em relevo nos recortes princesa, sem contraste — Registro O Relevo |
+| Elástico, top | Faixa elástica bronze na base do top (fecha logo abaixo do busto, tecido esticado sem franzido), estampada em todo o comprimento com o monograma ÉCLAT repetido tipo marca d'água, tom sobre tom |
+| Costura, top costas | Costas abertas — duas alças retas sem cruzar, convergindo direto no elástico da base, sem travessas/escada e sem recorte vazado |
 | Costura, short frente | Costuras normais de construção (centro frente, laterais, cós) presentes mas **sem costura viva** — sem pesponto duplo ou relevo aparente |
 | Costura, short costas | **Costura empina bumbum** — recorte em coração na pala, subindo e abraçando cada lado do glúteo, pesponto duplo bem marcado |
-| Marca | Logotipo ÉCLAT no peito do top, tom sobre tom — posição igual à prancha original, cor adaptada ao tecido novo |
+| Marca, top | Logotipo ÉCLAT em relevo no peito (tom sobre tom) + elástico estampado na base (ver acima) |
+| Marca, short | Logotipo ÉCLAT caramelo no cós; monograma emborrachado 3D caramelo na coxa frontal (~4cm) |
 
-O short foge do Registro O Relevo do restante da peça — decisão explícita da usuária, não erro de geração. A costura empina bumbum nas costas do short é a resposta à pergunta "o que dá exclusividade à peça sem mudar a modelagem" — assinatura de construção, não de molde.
+O short foge do Registro O Relevo do restante da peça — decisão explícita da usuária, não erro de geração. A costura empina bumbum nas costas do short e o elástico estampado do top são a resposta à pergunta "o que dá exclusividade à peça sem mudar a modelagem" — assinatura de construção e de marca, não de molde.
 
-Proposta descartada: um recorte vazado pequeno nas costas do top, no espírito do Eclipse, com peça de metal gravada onde as alças se cruzam — a usuária preferiu manter a modelagem original e levar a assinatura para a costura do short em vez de alterar o corte.
+Proposta descartada: um recorte vazado pequeno nas costas do top, no espírito do Eclipse, com peça de metal gravada onde as alças se cruzam — a usuária preferiu manter a modelagem original. Depois disso, pediu para simplificar a escada nas costas para um corte mais aberto (sem travessas), mantendo as duas alças retas.
 
 ### Material desenvolvido
 
 - Render fotográfico frente do conjunto (top + short), modelo genérica — `fichas/orvalho-bronze-frente.png`
-- Render fotográfico frente com o avatar Soul da própria usuária — top curto com elástico abaixo do busto (tecido esticado, sem franzido), short com costuras normais e sem costura viva, cabelo arrumado e maquiagem — `fichas/orvalho-bronze-frente-avatar.png`
-- Render fotográfico costas com o mesmo avatar — modelagem original em escada, costura empina bumbum no short — `fichas/orvalho-bronze-costas-avatar.png`
+- Render fotográfico frente com o avatar Soul da própria usuária — top com elástico estampado ÉCLAT na base, short com logo caramelo no cós e monograma caramelo na coxa, cabelo arrumado e maquiagem — `fichas/orvalho-bronze-frente-avatar.png`
+- Render fotográfico costas com o mesmo avatar — costas abertas (sem escada), costura empina bumbum no short — `fichas/orvalho-bronze-costas-avatar.png`
 
 ### Nota técnica — geração com avatar próprio
 
@@ -51,6 +53,7 @@ Rodadas de refinamento seguintes, todas com o mesmo método (peça aprovada como
 2. Remoção da costura aparente do short (passou a ficar liso demais, sem nenhuma costura visível).
 3. Elástico abaixo do busto adicionado ao top, com o pedido explícito de manter o tecido esticado — sem franzido/gathering, mesmo com o elástico; troca da foto de rosto por um retrato mais elegante do avatar (cabelo arrumado, maquiagem); reinclusão das costuras de construção do short (centro frente, laterais, cós) que tinham sumido por completo na rodada anterior — mantendo, porém, a ausência de costura viva/pesponto aparente pedida.
 4. Toque final: o logotipo ÉCLAT desapareceu do peito numa das gerações — restaurado numa última passada cirúrgica sem alterar mais nada.
+5. Elástico da base do top estampado com o monograma ÉCLAT repetido em marca d'água tom sobre tom; costas simplificadas — removidas as travessas da escada, ficando as duas alças retas convergindo direto no elástico, um corte mais aberto; logotipo ÉCLAT caramelo adicionado ao cós do short e monograma emborrachado caramelo à coxa frontal.
 
 ### Pendências
 
