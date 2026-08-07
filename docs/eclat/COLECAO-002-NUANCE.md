@@ -94,23 +94,26 @@ Macacão flare, referência fotográfica enviada pelo usuário (frente e costas,
 | Perna | Flare — abre a partir da coxa até a barra larga |
 | Traçado | Costuras curvas nas laterais da perna, do quadril à barra |
 
-### Colorways gerados — frente apenas
+### Colorway fechado
 
-Duas opções de acabamento, mesma cor de fundo, mesmo monograma off white no peito esquerdo, ~3-4cm:
+**Opção 1 escolhida**: bronze/terracota liso, costura estrutural tom sobre tom em relevo — sem contraste de cor (Registro O Relevo). A opção 2 (costura em contraste off white) foi descartada.
 
-| Opção | Tecido | Costura | Registro |
-|---|---|---|---|
-| 1 | Bronze/terracota liso | Tom sobre tom, em relevo — sem contraste de cor | O Relevo |
-| 2 | Bronze/terracota liso | Contraste off white, visível | Costura Invertida |
+**Aplicação da marca — decisão final, diferente do que foi gerado primeiro:**
+
+| Onde | Marca | Acabamento |
+|---|---|---|
+| Frente | Logotipo "ÉCLAT" | Etiqueta caramelo (transfer plano, não bordado nem emborrachado), centralizada entre os seios, ~4-5cm |
+| Costas | Monograma | Tom sobre tom em relevo, centralizado nas costas, ~4cm |
+
+A primeira geração tinha colocado o monograma no peito esquerdo — corrigido a pedido do usuário: sem monograma na frente, logotipo caramelo no centro do busto, monograma só nas costas.
 
 ### Material desenvolvido
 
-- Render fotográfico frente, colorway bronze, opção tom sobre tom — `fichas/macaquinhoA-bronze-toneontone-frente.png`
-- Render fotográfico frente, colorway bronze, opção contraste — `fichas/macaquinhoA-bronze-contraste-frente.png`
+- Render fotográfico frente — `fichas/macaquinhoA-bronze-frente.png`
+- Render fotográfico costas — `fichas/macaquinhoA-bronze-costas.png`
 
 ### Pendências
 
 1. Nome da peça.
-2. Costas — ainda não geradas neste colorway.
-3. Desenho técnico — ainda não feito.
-4. Escolha entre as duas opções de costura (tom sobre tom vs. contraste).
+2. Desenho técnico — ainda não feito.
+3. Confirmar a cor caramelo da etiqueta contra a amostra física (referência: etiquetas heat-transfer já usadas em outras peças, enviada pelo usuário).
