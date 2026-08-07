@@ -158,6 +158,14 @@ Proposta descartada: um recorte vazado pequeno nas costas do top, no espírito d
 - Render fotográfico costas com o mesmo avatar — costas abertas (sem escada), costura empina bumbum no short — `fichas/orvalho-bronze-costas-avatar.png`
 - Desenho técnico (croqui plano) — `fichas/tec_aureola_flat.png`, montado por `fichas/compose-flat-aureola.py`
 
+### Colorway 2 · Canelado cereja (tecido do Eclipse)
+
+Mesma construção, mesmo avatar — só muda o tecido: da poliamida lisa bronze para o canelado cereja/framboesa do Eclipse (ver `fichas/amostra-canelado.jpg`). Nervuras finas visíveis, cor vermelho cereja. Elástico da base do top e monograma da barra do short passam de estampado/emborrachado para relevo tom sobre tom tipo jacquard — acabamento que combina melhor com a malha canelada do que impressão digital.
+
+- Render fotográfico frente, avatar da usuária, canelado cereja — `fichas/aureola-canelado-cereja-frente.png`
+
+**Pendência:** costas ainda não geradas neste colorway; confirmar a cor cereja contra o cartão físico da Marazul (mesma pendência do Eclipse).
+
 ### Nota técnica — geração com avatar próprio
 
 O caminho `soul_2` (único que aceita o avatar treinado, `soul_id`) alterou a modelagem da peça em duas tentativas seguidas — as alças cruzadas em X viraram alças retas simples, e surgiu uma etiqueta inventada no short que não existe na peça. Resolvido usando `nano_banana_pro` (o caminho que preserva construção com fidelidade) com **duas imagens de referência simultâneas**: a primeira como molde exato da peça (não pode mudar nada da construção), a segunda como referência só de rosto/identidade (uma foto do avatar) — pedindo para trocar apenas o rosto, mantendo a peça. **Registrado como método padrão** sempre que for preciso combinar avatar próprio com fidelidade de peça — evita depender do `soul_id`, que não segura construção.
