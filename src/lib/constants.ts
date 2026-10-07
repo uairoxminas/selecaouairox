@@ -1,6 +1,6 @@
-export const CHALLENGE_START = new Date("2026-06-11T00:00:00-03:00");
-export const CHALLENGE_END = new Date("2026-07-19T23:59:59-03:00");
-export const DRAW_DATE = new Date("2026-07-21T20:00:00-03:00");
+export const CHALLENGE_START = new Date("2026-05-15T00:00:00-03:00"); // TESTE — reverter para 2026-06-11 antes do lançamento
+export const CHALLENGE_END = new Date("2026-06-22T23:59:59-03:00");   // TESTE — reverter para 2026-07-19
+export const DRAW_DATE = new Date("2026-06-24T20:00:00-03:00");       // TESTE — reverter para 2026-07-21
 export const TOTAL_DAYS = 39;
 export const QUALIFYING_DAYS = 30;
 export const GOLDEN_FROM = 31;
